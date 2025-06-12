@@ -13,22 +13,23 @@
   --card-foreground: hsl(210, 12%, 20%);
   --border: hsl(220, 20%, 90%);
   --input: hsl(220, 20%, 90%);
-  --primary: hsl(25, 95%, 53%);
+  --primary: hsl(173, 29%, 63%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(200, 50%, 40%);
+  --secondary: hsl(15, 69%, 67%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(120, 35%, 55%);
+  --accent: hsl(65, 58%, 52%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(25, 95%, 53%);
+  --ring: hsl(173, 29%, 63%);
   --radius: 0.75rem;
   --neutral-light: hsl(40, 20%, 97%);
-  --text-dark: hsl(210, 12%, 20%);
+  --text-dark: hsl(120, 57%, 20%);
   --warm-cream: hsl(40, 30%, 98%);
-  --soft-green: hsl(120, 25%, 85%);
-  --warm-orange: hsl(25, 95%, 53%);
-  --sky-blue: hsl(200, 50%, 40%);
+  --teal: hsl(173, 29%, 63%);
+  --coral: hsl(15, 69%, 67%);
+  --green: hsl(65, 58%, 52%);
+  --dark-gray: hsl(120, 57%, 20%);
 }
 
 .dark {

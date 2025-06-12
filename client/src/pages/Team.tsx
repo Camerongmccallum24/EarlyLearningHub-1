@@ -228,7 +228,7 @@ export default function Team() {
                 View Open Positions
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="border-secondary text-secondary hover:bg-secondary hover:text-white">
               <Link href="/benefits">
                 <i className="fas fa-gift mr-2"></i>
                 See Benefits & Perks

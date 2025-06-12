@@ -269,7 +269,7 @@ const GroChatbot = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-gradient-to-r from-orange-500 to-blue-500 hover:from-orange-600 hover:to-blue-600 text-white rounded-full p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          className="bg-gradient-to-r from-teal to-coral hover:from-teal/90 hover:to-coral/90 text-white rounded-full p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl"
           aria-label="Open chat"
         >
           <MessageCircle size={24} />
@@ -290,14 +290,14 @@ const GroChatbot = () => {
           style={{ minWidth: "300px", minHeight: "350px" }}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-warm-orange to-sky-blue text-white p-4 flex justify-between items-center">
+          <div className="bg-gradient-to-r from-teal to-coral text-white p-4 flex justify-between items-center">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-white rounded-playful flex items-center justify-center shadow-card">
-                <span className="text-warm-orange font-bold text-lg">G</span>
+                <span className="text-teal font-bold text-lg">G</span>
               </div>
               <div>
                 <h3 className="font-semibold text-lg">GRO Careers</h3>
-                <p className="text-xs text-orange-100">AI Assistant • Ask me anything!</p>
+                <p className="text-xs text-white/80">AI Assistant • Ask me anything!</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -329,8 +329,8 @@ const GroChatbot = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 p-3 text-xs font-medium transition-all duration-200 min-w-0 relative ${
                     activeTab === tab.id
-                      ? 'text-blue-500 bg-white border-b-2 border-blue-400'
-                      : 'text-gray-600 hover:text-blue-500 hover:bg-gray-100'
+                      ? 'text-teal bg-white border-b-2 border-teal'
+                      : 'text-gray-600 hover:text-teal hover:bg-gray-100'
                   }`}
                 >
                   <div className="flex flex-col items-center gap-1">
@@ -438,7 +438,7 @@ const GroChatbot = () => {
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim()}
-                className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 disabled:bg-gray-300 disabled:from-gray-300 disabled:to-gray-300 text-white p-2.5 rounded-lg transition-all duration-200"
+                className="bg-gradient-to-r from-teal to-green hover:from-teal/90 hover:to-green/90 disabled:bg-gray-300 disabled:from-gray-300 disabled:to-gray-300 text-white p-2.5 rounded-lg transition-all duration-200"
                 aria-label="Send message"
               >
                 <Send size={16} />

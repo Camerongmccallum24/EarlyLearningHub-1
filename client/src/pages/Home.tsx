@@ -84,7 +84,7 @@ export default function Home() {
       <section className="py-16 sm:py-20 bg-gro-blue-green/5">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gro-dark-blue mb-4">Featured Opportunities</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#4682b4]">Featured Opportunities</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover meaningful career opportunities in early childhood education across our regional locations.
             </p>
@@ -122,7 +122,7 @@ export default function Home() {
       <section className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gro-blue-green mb-4">Our Locations</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-[#4682b4]">Our Locations</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover opportunities across Queensland's vibrant regional communities, each offering unique lifestyle benefits and career growth potential.
             </p>
@@ -237,7 +237,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">What Our Team Says</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-[#4682b4]">What Our Team Says</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Hear from our educators about their experience working with Regional Childcare.
             </p>

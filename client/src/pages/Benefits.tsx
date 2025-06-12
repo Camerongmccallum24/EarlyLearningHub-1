@@ -42,7 +42,7 @@ export default function Benefits() {
       <div className="bg-white py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gro-dark-blue mb-4 font-display">Comprehensive Benefits Package</h2>
+            <h2 className="text-4xl font-bold mb-4 font-display text-[#4682b4]">Comprehensive Benefits Package</h2>
             <div className="w-24 h-1 bg-gro-coral mx-auto rounded-full"></div>
           </div>
           <div className="grid lg:grid-cols-4 gap-10">

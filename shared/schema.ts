@@ -23,18 +23,20 @@ export const jobApplications = pgTable("job_applications", {
 
 export const jobs = pgTable("jobs", {
   id: serial("id").primaryKey(),
+  jobId: text("job_id"),
+  slug: text("slug"),
   title: text("title").notNull(),
   location: text("location").notNull(),
   type: text("type").notNull(),
   department: text("department").notNull(),
-  salary: text("salary").notNull(),
-  overview: text("overview").notNull(),
+  salary: text("salary_range").notNull(),
+  overview: text("overview"),
   description: text("description").notNull(),
   requirements: text("requirements").array().notNull(),
-  responsibilities: text("responsibilities").array().notNull(),
-  benefits: text("benefits").array().notNull().default([]),
-  isActive: boolean("is_active").default(true).notNull(),
-  postedDate: timestamp("posted_date").defaultNow().notNull(),
+  responsibilities: text("responsibilities").array(),
+  benefits: text("benefits").array(),
+  status: text("status").default("active").notNull(),
+  postedAt: timestamp("posted_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 

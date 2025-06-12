@@ -22,7 +22,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         requirements: job.requirements,
         benefits: job.benefits || [],
         status: "active",
-        createdAt: job.postedDate.toISOString(),
+        createdAt: job.postedAt.toISOString(),
         applyUrl: `https://ats.regionalchildcare.com/jobs/${job.id}/apply`,
         directUrl: `https://ats.regionalchildcare.com/jobs/${job.id}`
       }));
@@ -44,7 +44,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const jobId = parseInt(req.params.id);
       const job = await storage.getJob(jobId);
       
-      if (!job || !job.isActive) {
+      if (!job || job.status !== "active") {
         return res.status(404).json({ error: "Job not found" });
       }
 
@@ -59,7 +59,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         requirements: job.requirements,
         benefits: job.benefits || [],
         status: "active",
-        createdAt: job.postedDate.toISOString(),
+        createdAt: job.postedAt.toISOString(),
         applyUrl: `https://ats.regionalchildcare.com/jobs/${job.id}/apply`,
         directUrl: `https://ats.regionalchildcare.com/jobs/${job.id}`
       };
@@ -87,7 +87,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const updatedJobs = await storage.getJobsUpdatedSince(timestamp);
       
       const formattedJobs = updatedJobs
-        .filter(job => job.isActive)
+        .filter(job => job.status === "active")
         .map(job => ({
           id: job.id,
           title: job.title,
@@ -99,7 +99,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           requirements: job.requirements,
           benefits: job.benefits || [],
           status: "active",
-          createdAt: job.postedDate.toISOString(),
+          createdAt: job.postedAt.toISOString(),
           applyUrl: `https://ats.regionalchildcare.com/jobs/${job.id}/apply`,
           directUrl: `https://ats.regionalchildcare.com/jobs/${job.id}`
         }));

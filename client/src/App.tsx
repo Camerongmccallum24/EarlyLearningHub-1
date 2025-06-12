@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GroChatbot from "@/components/GroChatbot";
 import Home from "@/pages/Home";
 import Jobs from "@/pages/Jobs";
 import JobDetail from "@/pages/JobDetail";
@@ -40,6 +41,7 @@ function App() {
           </main>
           <Footer />
         </div>
+        <GroChatbot />
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

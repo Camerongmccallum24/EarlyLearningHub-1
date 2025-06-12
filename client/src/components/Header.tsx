@@ -29,7 +29,7 @@ export default function Header() {
           <Link href="/" className="flex items-center space-x-3 hover-scale transition-transform duration-300">
             <div className="flex items-baseline">
               <span className="text-4xl font-bold text-gro-blue-green hover:animate-bounce-gentle transition-all duration-200">g</span>
-              <span className="text-4xl font-bold text-gro-coral hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.1s'}}>r</span>
+              <span className="text-4xl font-bold text-gro-dark-blue hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.1s'}}>r</span>
               <span className="text-4xl font-bold text-gro-lime hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.2s'}}>o</span>
             </div>
             <div>

@@ -23,7 +23,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
               <h1 className="text-4xl lg:text-6xl font-bold text-sky-blue mb-6 leading-tight hover:text-gro-teal transition-colors duration-500">
-                Join Our <span className="text-warm-orange hover:text-gro-coral transition-colors duration-300">GRO Early Learning</span> Team
+                Join Our <span className="text-warm-orange hover:text-gro-dark-blue transition-colors duration-300">GRO Early Learning</span> Team
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed animate-slide-in-right">
                 {heroContent.subtitle}
@@ -44,15 +44,15 @@ export default function Home() {
               </div>
               
               <div className="flex items-center space-x-6 text-sm text-gray-600">
-                <div className="flex items-center hover:text-gro-coral transition-colors duration-200 hover-scale">
+                <div className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 hover-scale">
                   <i className="fas fa-map-marker-alt text-warm-orange mr-2 hover-scale"></i>
                   <span>3 Locations</span>
                 </div>
-                <div className="flex items-center hover:text-gro-coral transition-colors duration-200 hover-scale">
+                <div className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 hover-scale">
                   <i className="fas fa-users text-soft-green mr-2 hover-scale"></i>
                   <span>50+ Team Members</span>
                 </div>
-                <div className="flex items-center hover:text-gro-coral transition-colors duration-200 hover-scale">
+                <div className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 hover-scale">
                   <i className="fas fa-star text-warm-orange mr-2 hover-scale"></i>
                   <span>Award Winning</span>
                 </div>
@@ -139,7 +139,7 @@ export default function Home() {
                   className="w-full h-48 object-cover rounded-xl mb-6"
                 />
                 
-                <h3 className="text-2xl font-bold text-gro-coral mb-4">{location.name}</h3>
+                <h3 className="text-2xl font-bold text-gro-dark-blue mb-4">{location.name}</h3>
                 <p className="text-gray-600 mb-6">{location.description}</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">

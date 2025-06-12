@@ -28,11 +28,8 @@ const GroChatbot = () => {
   // AI Chat mutation
   const chatMutation = useMutation({
     mutationFn: async ({ messages, context }: { messages: any[], context: string }) => {
-      const response = await apiRequest('/api/chat', {
-        method: 'POST',
-        body: { messages, context }
-      });
-      return response;
+      const response = await apiRequest('POST', '/api/chat', { messages, context });
+      return await response.json();
     }
   });
 

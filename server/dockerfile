@@ -1,0 +1,56 @@
+# syntax=docker/dockerfile:1
+
+ARG NODE_VERSION=22.13.1
+FROM node:${NODE_VERSION}-slim AS base
+WORKDIR /app
+
+# Install build tools for native deps (if needed)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# --- Builder stage ---
+FROM base AS builder
+
+# Copy only package.json and package-lock.json for dependency install
+COPY --link ../package.json ../package-lock.json ./
+
+# Install all dependencies (including dev)
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci
+
+# Copy all source files needed for build
+COPY --link . .
+COPY --link ../shared ../shared
+COPY --link ../tsconfig.json ../tsconfig.json
+COPY --link ../vite.config.ts ../vite.config.ts
+
+# Build the server (and client, as per package.json build script)
+RUN --mount=type=cache,target=/root/.npm \
+    npm run build
+
+# Remove dev dependencies, keep only production deps
+RUN --mount=type=cache,target=/root/.npm \
+    rm -rf node_modules && npm ci --production
+
+# --- Final stage ---
+FROM node:${NODE_VERSION}-slim AS final
+WORKDIR /app
+
+# Create non-root user
+RUN useradd -m appuser
+
+# Copy built server and production node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./
+
+# Copy any runtime config needed (tsconfig, etc. not needed at runtime)
+
+ENV NODE_ENV=production
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+USER appuser
+
+EXPOSE 5000
+CMD ["npm", "start"]

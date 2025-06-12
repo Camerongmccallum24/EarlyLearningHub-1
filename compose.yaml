@@ -1,0 +1,32 @@
+services:
+  typescript-client:
+    build:
+      context: ./client
+      dockerfile: ../clientDockerfile
+    restart: unless-stopped
+    init: true
+    # env_file: ./client/.env  # Uncomment if .env file exists
+    ports:
+      - "5173:4173"  # Vite preview default port is 4173, mapped to 5173 for local dev
+    networks:
+      - appnet
+    depends_on:
+      - typescript-server
+    # The client may make API calls to the server
+
+  typescript-server:
+    build:
+      context: ./server
+      dockerfile: ../serverDockerfile
+    restart: unless-stopped
+    init: true
+    # env_file: ./server/.env  # Uncomment if .env file exists
+    ports:
+      - "5000:5000"  # Exposed in Dockerfile
+    networks:
+      - appnet
+    # Add depends_on for external services here if needed
+
+networks:
+  appnet:
+    driver: bridge

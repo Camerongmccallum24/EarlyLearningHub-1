@@ -1,30 +1,77 @@
-# Dependencies
-node_modules
-npm-debug.log*
+# Merge of both versions
 
-# Environment files
+# Version control
+.git/
+.gitignore
+.svn/
+.hg/
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log
+
+# Build outputs
+dist/
+build/
+out/
+.next
+
+# Development artifacts
+.idea/
+.vscode/
+*.swp
+*.swo
+debug/
+*.log
+
+# Environment files and secrets
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env*
+*.pem
+*.key
+*.crt
+config.local.*
+*.local.yml
 
-# Build outputs
-dist
-build
-.next
+# Test files and folders
+coverage
+.nyc_output
+test/
+tests/
+*_test.go
 
-# Development files
-.git
-.gitignore
-README.md
+# Language-specific
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+/vendor/
+*.test
+.go-cache/
+target/
+*.class
+.gradle/
+
+# Project-specific
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+docs/
 *.md
+README*
 
-# IDE files
-.vscode
-.idea
-*.swp
-*.swo
+# Temporary and local files
+tmp/
+temp/
+*.tmp
+.local/
+local/
 
 # OS generated files
 .DS_Store
@@ -35,19 +82,16 @@ README.md
 ehthumbs.db
 Thumbs.db
 
-# Logs
-logs
-*.log
+# Replit config
+.replit
 
-# Docker files
-Dockerfile*
-docker-compose*.yml
-.dockerignore
+# Ignore attached_assets image and text files (if not needed in build)
+attached_assets/*.png
+attached_assets/*.jpeg
+attached_assets/*.jpg
+attached_assets/*.txt
 
-# Testing
-coverage
-.nyc_output
+# Ignore package manager lock files (handled by instructions)
+# (Do NOT ignore package-lock.json, yarn.lock, etc. as per instructions)
 
-# Cache directories
-.npm
-.eslintcache
+# End of .dockerignore

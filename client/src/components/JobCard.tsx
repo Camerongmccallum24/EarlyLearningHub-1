@@ -83,7 +83,7 @@ export default function JobCard({ job }: JobCardProps) {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end space-y-3 sm:space-y-0 gap-3">
         <div className="flex flex-col gap-1 min-w-0 flex-1">
           <span className="text-xs sm:text-sm text-gray-500 hover:text-gro-dark-blue transition-colors duration-200 truncate">
-            Posted {formatPostedDate(job.postedDate)}
+            Posted {formatPostedDate(job.postedAt)}
           </span>
           <div className="hidden sm:block">
             <LocationInfo locationName={job.location} />

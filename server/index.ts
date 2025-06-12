@@ -58,8 +58,8 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // Use PORT environment variable for DigitalOcean App Platform
-  const port = process.env.PORT || 8080;
+  // Use PORT environment variable for DigitalOcean App Platform, fallback to 5000 for development
+  const port = process.env.PORT || 5000;
   server.listen({
     port,
     host: "0.0.0.0",

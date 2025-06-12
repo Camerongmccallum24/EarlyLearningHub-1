@@ -1,0 +1,47 @@
+# DigitalOcean App Platform ignore file
+# These files and directories will be excluded from deployment
+
+# Development files
+.git/
+.gitignore
+.env*
+.vscode/
+.idea/
+
+# Docker files (not needed for App Platform)
+Dockerfile*
+docker-compose*.yml
+nginx.conf
+init-db.sql
+
+# Node modules (will be installed during build)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts that will be generated
+dist/
+build/
+
+# Development and testing
+.nyc_output/
+coverage/
+*.log
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Documentation
+*.md
+docs/
+
+# Replit specific
+.replit
+replit.nix

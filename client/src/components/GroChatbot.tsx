@@ -34,10 +34,10 @@ const GroChatbot = () => {
   });
 
   const tabs = [
-    { id: 'general', label: 'General', icon: MessageCircle, color: 'bg-blue-500' },
-    { id: 'jobs', label: 'Open Roles', icon: Briefcase, color: 'bg-green-500' },
-    { id: 'culture', label: 'Culture', icon: Users, color: 'bg-purple-500' },
-    { id: 'faq', label: 'FAQ', icon: HelpCircle, color: 'bg-orange-500' }
+    { id: 'general', label: 'General', icon: MessageCircle, color: 'bg-sky-blue' },
+    { id: 'jobs', label: 'Open Roles', icon: Briefcase, color: 'bg-soft-green' },
+    { id: 'culture', label: 'Culture', icon: Users, color: 'bg-warm-orange' },
+    { id: 'faq', label: 'FAQ', icon: HelpCircle, color: 'bg-warm-orange' }
   ];
 
   const quickResponses = {
@@ -269,7 +269,7 @@ const GroChatbot = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-gradient-to-r from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
+          className="bg-gradient-to-r from-warm-orange to-sky-blue hover:from-warm-orange/90 hover:to-sky-blue/90 text-white rounded-playful p-4 shadow-card transition-all duration-300 hover:scale-110"
           aria-label="Open chat"
         >
           <MessageCircle size={24} />
@@ -280,24 +280,24 @@ const GroChatbot = () => {
       {isOpen && (
         <div
           className="
-            bg-white rounded-lg shadow-2xl 
+            bg-white rounded-playful shadow-soft 
             w-[95vw] max-w-[400px] 
             h-[70vh] max-h-[600px] 
             sm:w-96 sm:max-w-[420px] 
             sm:h-[600px] sm:max-h-[80vh]
-            flex flex-col border border-gray-200 overflow-hidden
+            flex flex-col border border-orange-100 overflow-hidden
           "
           style={{ minWidth: "300px", minHeight: "350px" }}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-4 flex justify-between items-center">
+          <div className="bg-gradient-to-r from-warm-orange to-sky-blue text-white p-4 flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                <span className="text-blue-500 font-bold text-lg">G</span>
+              <div className="w-10 h-10 bg-white rounded-playful flex items-center justify-center shadow-card">
+                <span className="text-warm-orange font-bold text-lg">G</span>
               </div>
               <div>
                 <h3 className="font-semibold text-lg">GRO Careers</h3>
-                <p className="text-xs text-blue-100">AI Assistant • Ask me anything!</p>
+                <p className="text-xs text-orange-100">AI Assistant • Ask me anything!</p>
               </div>
             </div>
             <div className="flex items-center gap-2">

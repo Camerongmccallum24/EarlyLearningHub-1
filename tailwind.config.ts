@@ -61,6 +61,11 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        // GRO Early Learning brand colors
+        teal: "var(--teal)",
+        coral: "var(--coral)",
+        green: "var(--green)",
+        "dark-gray": "var(--dark-gray)",
       },
       keyframes: {
         "accordion-down": {

@@ -352,13 +352,13 @@ const GroChatbot = () => {
                 <div
                   className={`max-w-[85%] group relative ${
                     message.type === 'user'
-                      ? 'bg-gradient-to-r from-blue-400 to-blue-500 text-white rounded-lg rounded-br-sm'
+                      ? 'bg-gradient-to-r from-teal to-coral text-white rounded-lg rounded-br-sm'
                       : 'bg-white text-gray-800 rounded-lg rounded-bl-sm shadow-sm border border-gray-100'
                   } p-3 text-sm`}
                 >
                   <div className="flex items-start gap-2">
                     {message.type === 'bot' && (
-                      <Bot size={16} className="text-blue-500 mt-1 flex-shrink-0" />
+                      <Bot size={16} className="text-teal mt-1 flex-shrink-0" />
                     )}
                     <div className="flex-1">
                       <p className="leading-relaxed">{message.content}</p>

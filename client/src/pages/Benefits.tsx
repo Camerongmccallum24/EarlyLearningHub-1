@@ -57,7 +57,7 @@ export default function Benefits() {
         </div>
 
         {/* Additional Perks */}
-        <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-12 mb-20">
+        <div className="bg-gro-teal/5 rounded-2xl p-12 mb-20">
           <h2 className="text-3xl font-bold text-primary text-center mb-12">Additional Perks</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-xl">

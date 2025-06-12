@@ -269,7 +269,7 @@ const GroChatbot = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-gradient-to-r from-teal to-coral hover:from-teal/90 hover:to-coral/90 text-white rounded-full p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl"
+          className="bg-gro-teal hover:bg-gro-teal/90 text-white rounded-full p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl"
           aria-label="Open chat"
         >
           <MessageCircle size={24} />
@@ -438,7 +438,7 @@ const GroChatbot = () => {
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim()}
-                className="bg-gradient-to-r from-teal to-green hover:from-teal/90 hover:to-green/90 disabled:bg-gray-300 disabled:from-gray-300 disabled:to-gray-300 text-white p-2.5 rounded-lg transition-all duration-200"
+                className="bg-gro-coral hover:bg-gro-coral/90 disabled:bg-gray-300 text-white p-2.5 rounded-lg transition-all duration-200"
                 aria-label="Send message"
               >
                 <Send size={16} />

@@ -112,7 +112,7 @@ export default function RelocationSupport() {
         </div>
 
         {/* Benefits Banner */}
-        <div className="bg-gradient-to-r from-teal to-coral text-white p-6 rounded-2xl mb-12 text-center">
+        <div className="bg-gro-teal text-white p-6 rounded-2xl mb-12 text-center">
           <h2 className="text-2xl font-bold mb-2">GRO Relocation Benefits</h2>
           <div className="grid md:grid-cols-3 gap-6 mt-4">
             <div>
@@ -567,13 +567,13 @@ export default function RelocationSupport() {
                 Contact us to discuss your specific needs and get personalized assistance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-gradient-to-r from-sky-blue to-warm-peach hover:from-sky-blue/90 hover:to-warm-peach/90 text-white">
+                <Button asChild size="lg" className="bg-gro-coral hover:bg-gro-coral/90 text-white">
                   <Link href="/jobs">
                     <i className="fas fa-search mr-2"></i>
                     Browse Available Positions
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-sky-blue text-sky-blue hover:bg-sky-blue hover:text-white">
+                <Button asChild variant="outline" size="lg" className="border-gro-teal text-gro-teal hover:bg-gro-teal hover:text-white">
                   <a href="mailto:careers@groearlylearning.com">
                     <i className="fas fa-envelope mr-2"></i>
                     Contact HR Team

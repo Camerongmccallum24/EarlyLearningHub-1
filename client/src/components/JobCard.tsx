@@ -42,15 +42,15 @@ export default function JobCard({ job }: JobCardProps) {
         <div>
           <h3 className="text-xl font-semibold text-sky-blue mb-2 hover:text-gro-teal transition-colors duration-300">{job.title}</h3>
           <div className="flex items-center space-x-4 text-sm text-gray-600">
-            <span className="flex items-center hover:text-gro-coral transition-colors duration-200">
+            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">
               <i className="fas fa-map-marker-alt text-warm-orange mr-1 hover-scale"></i>
               <span>{job.location}</span>
             </span>
-            <span className="flex items-center hover:text-gro-coral transition-colors duration-200">
+            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">
               <i className="fas fa-clock text-soft-green mr-1 hover-scale"></i>
               <span>{job.type}</span>
             </span>
-            <span className="flex items-center hover:text-gro-coral transition-colors duration-200">
+            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">
               <i className={`fas fa-tag mr-1 hover-scale ${getDepartmentColor(job.department)}`}></i>
               <span>{job.department}</span>
             </span>
@@ -73,7 +73,7 @@ export default function JobCard({ job }: JobCardProps) {
       
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-500 hover:text-gro-coral transition-colors duration-200">
+          <span className="text-sm text-gray-500 hover:text-gro-dark-blue transition-colors duration-200">
             Posted {formatPostedDate(job.postedDate)}
           </span>
           <LocationInfo locationName={job.location} />

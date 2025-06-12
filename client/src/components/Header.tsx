@@ -44,9 +44,9 @@ export default function Header() {
                 href={item.href}
                 className={`transition-all duration-300 font-medium hover-scale button-press relative ${
                   isActive(item.href)
-                    ? "text-gro-coral"
-                    : "text-gro-blue-green hover:text-gro-coral"
-                } after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-gro-coral after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300`}
+                    ? "text-gro-dark-blue"
+                    : "text-gro-blue-green hover:text-gro-dark-blue"
+                } after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-gro-dark-blue after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300`}
               >
                 {item.label}
               </Link>

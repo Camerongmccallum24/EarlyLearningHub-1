@@ -35,7 +35,7 @@ export default function Benefits() {
 
         {/* Comprehensive Benefits Package */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-gro-coral text-center mb-12">Comprehensive Benefits Package</h2>
+          <h2 className="text-3xl font-bold text-gro-dark-blue text-center mb-12">Comprehensive Benefits Package</h2>
           <div className="grid lg:grid-cols-4 gap-8">
             {Object.entries(benefitsData).map(([category, data]) => (
               <div key={category} className="text-center">

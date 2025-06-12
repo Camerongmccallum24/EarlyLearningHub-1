@@ -104,7 +104,7 @@ export default function RelocationSupport() {
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-primary mb-4">Relocation Support Center</h1>
+          <h1 className="text-4xl font-bold text-gro-blue-green mb-4">Relocation Support Center</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Planning your move to join GRO Early Learning? Use our comprehensive relocation tools to 
             estimate costs, explore housing options, and discover your new community.
@@ -142,7 +142,7 @@ export default function RelocationSupport() {
           <TabsContent value="calculator" className="space-y-8">
             <Card>
               <CardHeader>
-                <CardTitle className="text-sky-blue">Interactive Relocation Cost Calculator</CardTitle>
+                <CardTitle className="text-gro-coral">Interactive Relocation Cost Calculator</CardTitle>
                 <CardDescription>
                   Get a personalized estimate of your moving costs with GRO's relocation benefits included.
                 </CardDescription>

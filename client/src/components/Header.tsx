@@ -28,9 +28,9 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <div className="flex items-baseline">
-              <span className="text-4xl font-bold text-sky-blue">g</span>
-              <span className="text-4xl font-bold text-warm-peach">r</span>
-              <span className="text-4xl font-bold text-light-peach">o</span>
+              <span className="text-4xl font-bold text-gro-blue-green">g</span>
+              <span className="text-4xl font-bold text-gro-coral">r</span>
+              <span className="text-4xl font-bold text-gro-lime">o</span>
             </div>
             <div>
               <h1 className="text-xl font-bold text-charcoal uppercase tracking-wide">EARLY LEARNING</h1>
@@ -44,8 +44,8 @@ export default function Header() {
                 href={item.href}
                 className={`transition-colors font-medium ${
                   isActive(item.href)
-                    ? "text-warm-orange"
-                    : "text-sky-blue hover:text-warm-orange"
+                    ? "text-gro-coral"
+                    : "text-gro-blue-green hover:text-gro-coral"
                 }`}
               >
                 {item.label}

@@ -139,7 +139,7 @@ export default function Home() {
                   className="w-full h-48 object-cover rounded-xl mb-6"
                 />
                 
-                <h3 className="text-2xl font-bold text-primary mb-4">{location.name}</h3>
+                <h3 className="text-2xl font-bold text-gro-coral mb-4">{location.name}</h3>
                 <p className="text-gray-600 mb-6">{location.description}</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
@@ -176,7 +176,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-6">Why Choose Regional Childcare?</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gro-lime mb-6">Why Choose Regional Childcare?</h2>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 We're transforming early childhood education in regional Queensland, creating environments where both children and educators thrive.
               </p>

@@ -1,8 +1,10 @@
 import express, { type Request, Response, NextFunction } from "express";
+import compression from "compression";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
+app.use(compression()); // Enable gzip compression for DigitalOcean App Platform
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -56,10 +58,8 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
-  const port = 5000;
+  // Use PORT environment variable for DigitalOcean App Platform
+  const port = process.env.PORT || 8080;
   server.listen({
     port,
     host: "0.0.0.0",

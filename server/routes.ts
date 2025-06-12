@@ -6,6 +6,10 @@ import { generateChatResponse, type ChatMessage } from "./openai";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Add health check endpoint for DigitalOcean App Platform
+  app.get("/health", (req, res) => {
+    res.status(200).json({ status: "healthy", timestamp: new Date().toISOString() });
+  });
   // Webhook endpoint: Get all active jobs for external career sites
   app.get("/api/webhooks/jobs", async (req, res) => {
     try {

@@ -175,6 +175,11 @@ export class MemStorage implements IStorage {
     const job: Job = { 
       ...insertJob,
       id,
+      jobId: insertJob.jobId || null,
+      slug: insertJob.slug || null,
+      overview: insertJob.overview || null,
+      responsibilities: insertJob.responsibilities || [],
+      benefits: insertJob.benefits || [],
       status: insertJob.status || "active",
       createdAt: new Date(),
       postedAt: insertJob.postedAt || new Date()

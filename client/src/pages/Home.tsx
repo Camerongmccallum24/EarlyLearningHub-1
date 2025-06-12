@@ -333,6 +333,12 @@ export default function Home() {
                   Apply Now
                 </Link>
               </Button>
+              <Button asChild size="lg" className="bg-coral hover:bg-coral/90 text-white">
+                <Link href="/relocation">
+                  <i className="fas fa-truck mr-2"></i>
+                  Relocation Support
+                </Link>
+              </Button>
             </div>
             
             <div className="mt-12 grid md:grid-cols-3 gap-8 text-white/90">

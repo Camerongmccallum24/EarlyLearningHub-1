@@ -11,6 +11,7 @@ export default function Header() {
     { href: "/jobs", label: "Jobs" },
     { href: "/about", label: "About" },
     { href: "/benefits", label: "Benefits" },
+    { href: "/relocation", label: "Relocation" },
     { href: "/team", label: "Team" },
     { href: "/faq", label: "FAQ" },
   ];

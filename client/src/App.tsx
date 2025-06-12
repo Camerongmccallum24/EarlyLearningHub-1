@@ -13,6 +13,7 @@ import About from "@/pages/About";
 import Benefits from "@/pages/Benefits";
 import Team from "@/pages/Team";
 import FAQ from "@/pages/FAQ";
+import RelocationSupport from "@/pages/RelocationSupport";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/benefits" component={Benefits} />
       <Route path="/team" component={Team} />
       <Route path="/faq" component={FAQ} />
+      <Route path="/relocation" component={RelocationSupport} />
       <Route component={NotFound} />
     </Switch>
   );

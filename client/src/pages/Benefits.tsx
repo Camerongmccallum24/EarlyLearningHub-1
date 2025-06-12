@@ -240,6 +240,12 @@ export default function Benefits() {
                 View Current Opportunities
               </Link>
             </Button>
+            <Button asChild variant="outline" size="lg" className="border-teal text-teal hover:bg-teal hover:text-white">
+              <Link href="/relocation">
+                <i className="fas fa-truck mr-2"></i>
+                Relocation Support
+              </Link>
+            </Button>
             <Button asChild variant="outline" size="lg">
               <Link href="/faq">
                 <i className="fas fa-question-circle mr-2"></i>

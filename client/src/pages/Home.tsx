@@ -18,25 +18,25 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/10 via-white to-secondary/5 py-20 lg:py-32">
+      <section className="bg-gradient-to-br from-warm-orange/10 via-warm-cream to-sky-blue/5 py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
-                {heroContent.title.split(',')[0]}, Build Your <span className="text-secondary">Career</span>
+              <h1 className="text-4xl lg:text-6xl font-bold text-sky-blue mb-6 leading-tight">
+                Join Our <span className="text-warm-orange">GRO Early Learning</span> Team
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 {heroContent.subtitle}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+                <Button asChild size="lg" className="bg-warm-orange hover:bg-warm-orange/90 rounded-playful shadow-card">
                   <Link href={heroContent.primaryCTA.href}>
                     <i className="fas fa-briefcase mr-2"></i>
                     {heroContent.primaryCTA.label}
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white">
+                <Button asChild variant="outline" size="lg" className="border-sky-blue text-sky-blue hover:bg-sky-blue hover:text-white rounded-playful">
                   <Link href={heroContent.secondaryCTA.href}>
                     {heroContent.secondaryCTA.label}
                   </Link>
@@ -45,15 +45,15 @@ export default function Home() {
               
               <div className="flex items-center space-x-6 text-sm text-gray-600">
                 <div className="flex items-center">
-                  <i className="fas fa-map-marker-alt text-secondary mr-2"></i>
+                  <i className="fas fa-map-marker-alt text-warm-orange mr-2"></i>
                   <span>3 Locations</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-users text-accent mr-2"></i>
+                  <i className="fas fa-users text-soft-green mr-2"></i>
                   <span>50+ Team Members</span>
                 </div>
                 <div className="flex items-center">
-                  <i className="fas fa-star text-secondary mr-2"></i>
+                  <i className="fas fa-star text-warm-orange mr-2"></i>
                   <span>Award Winning</span>
                 </div>
               </div>
@@ -63,15 +63,15 @@ export default function Home() {
               <img 
                 src="https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Early childhood educators with children" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                className="rounded-playful shadow-soft w-full h-auto"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-playful shadow-card">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                    <i className="fas fa-heart text-accent text-xl"></i>
+                  <div className="w-12 h-12 bg-soft-green/20 rounded-full flex items-center justify-center">
+                    <i className="fas fa-heart text-soft-green text-xl"></i>
                   </div>
                   <div>
-                    <p className="font-semibold text-primary">{jobs.length}+ Active Positions</p>
+                    <p className="font-semibold text-sky-blue">{jobs.length}+ Active Positions</p>
                     <p className="text-sm text-gray-600">Join our team today</p>
                   </div>
                 </div>
@@ -82,10 +82,10 @@ export default function Home() {
       </section>
 
       {/* Featured Jobs Section */}
-      <section className="py-20 bg-neutral-light">
+      <section className="py-20 bg-warm-cream">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">Featured Opportunities</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-sky-blue mb-4">Featured Opportunities</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover meaningful career opportunities in early childhood education across our regional locations.
             </p>

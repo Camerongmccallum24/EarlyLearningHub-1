@@ -29,25 +29,25 @@ export default function JobCard({ job }: JobCardProps) {
 
   const getDepartmentColor = (department: string) => {
     switch (department.toLowerCase()) {
-      case 'teaching': return 'text-primary';
-      case 'management': return 'text-secondary';
-      case 'support': return 'text-accent';
+      case 'teaching': return 'text-sky-blue';
+      case 'management': return 'text-warm-orange';
+      case 'support': return 'text-soft-green';
       default: return 'text-gray-600';
     }
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all p-8 border border-gray-100">
+    <div className="bg-white rounded-playful shadow-card hover:shadow-soft transition-all p-8 border border-orange-50">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-semibold text-primary mb-2">{job.title}</h3>
+          <h3 className="text-xl font-semibold text-sky-blue mb-2">{job.title}</h3>
           <div className="flex items-center space-x-4 text-sm text-gray-600">
             <span className="flex items-center">
-              <i className="fas fa-map-marker-alt text-secondary mr-1"></i>
+              <i className="fas fa-map-marker-alt text-warm-orange mr-1"></i>
               <span>{job.location}</span>
             </span>
             <span className="flex items-center">
-              <i className="fas fa-clock text-accent mr-1"></i>
+              <i className="fas fa-clock text-soft-green mr-1"></i>
               <span>{job.type}</span>
             </span>
             <span className="flex items-center">
@@ -56,7 +56,7 @@ export default function JobCard({ job }: JobCardProps) {
             </span>
           </div>
         </div>
-        <Badge variant="secondary" className="bg-accent/10 text-accent hover:bg-accent/20">
+        <Badge variant="secondary" className="bg-soft-green/10 text-soft-green hover:bg-soft-green/20 rounded-playful">
           {job.salary}
         </Badge>
       </div>

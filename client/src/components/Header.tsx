@@ -22,16 +22,16 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-white shadow-soft sticky top-0 z-50 border-b border-orange-100">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <i className="fas fa-child text-white text-lg"></i>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-warm-orange rounded-playful flex items-center justify-center shadow-card">
+              <span className="text-white text-2xl font-bold">G</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-primary">Regional Childcare</h1>
-              <p className="text-xs text-gray-500">Early Learning Careers</p>
+              <h1 className="text-xl font-bold text-sky-blue">GRO Early Learning</h1>
+              <p className="text-sm text-warm-orange font-medium">Building Bright Futures</p>
             </div>
           </Link>
           
@@ -40,10 +40,10 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`transition-colors ${
+                className={`transition-colors font-medium ${
                   isActive(item.href)
-                    ? "text-primary font-medium"
-                    : "text-gray-700 hover:text-primary"
+                    ? "text-warm-orange"
+                    : "text-sky-blue hover:text-warm-orange"
                 }`}
               >
                 {item.label}
@@ -63,10 +63,10 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-lg transition-colors ${
+                    className={`text-lg transition-colors font-medium ${
                       isActive(item.href)
-                        ? "text-primary font-medium"
-                        : "text-gray-700 hover:text-primary"
+                        ? "text-warm-orange"
+                        : "text-sky-blue hover:text-warm-orange"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >

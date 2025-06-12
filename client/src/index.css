@@ -5,26 +5,30 @@
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(210, 12%, 20%);
-  --muted: hsl(210, 40%, 96%);
+  --muted: hsl(40, 30%, 95%);
   --muted-foreground: hsl(215, 16%, 47%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(210, 12%, 20%);
   --card: hsl(0, 0%, 100%);
   --card-foreground: hsl(210, 12%, 20%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
-  --primary: hsl(173, 29%, 63%);
+  --border: hsl(220, 20%, 90%);
+  --input: hsl(220, 20%, 90%);
+  --primary: hsl(25, 95%, 53%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(15, 69%, 67%);
+  --secondary: hsl(200, 50%, 40%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(65, 58%, 52%);
+  --accent: hsl(120, 35%, 55%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(173, 29%, 63%);
-  --radius: 0.5rem;
-  --neutral-light: hsl(0, 0%, 96%);
+  --ring: hsl(25, 95%, 53%);
+  --radius: 0.75rem;
+  --neutral-light: hsl(40, 20%, 97%);
   --text-dark: hsl(210, 12%, 20%);
+  --warm-cream: hsl(40, 30%, 98%);
+  --soft-green: hsl(120, 25%, 85%);
+  --warm-orange: hsl(25, 95%, 53%);
+  --sky-blue: hsl(200, 50%, 40%);
 }
 
 .dark {
@@ -61,93 +65,106 @@
   }
 }
 
-/* Custom utility classes */
-.bg-primary {
-  background-color: #2D5A87;
+/* Custom utility classes for childcare design */
+.bg-warm-orange {
+  background-color: hsl(25, 95%, 53%);
 }
 
-.text-primary {
-  color: #2D5A87;
+.text-warm-orange {
+  color: hsl(25, 95%, 53%);
 }
 
-.border-primary {
-  border-color: #2D5A87;
+.border-warm-orange {
+  border-color: hsl(25, 95%, 53%);
 }
 
-.bg-secondary {
-  background-color: #F7931E;
+.bg-sky-blue {
+  background-color: hsl(200, 50%, 40%);
 }
 
-.text-secondary {
-  color: #F7931E;
+.text-sky-blue {
+  color: hsl(200, 50%, 40%);
 }
 
-.bg-accent {
-  background-color: #4CAF50;
+.bg-soft-green {
+  background-color: hsl(120, 35%, 55%);
 }
 
-.text-accent {
-  color: #4CAF50;
+.text-soft-green {
+  color: hsl(120, 35%, 55%);
 }
 
-.bg-neutral-light {
-  background-color: #F5F5F5;
+.bg-warm-cream {
+  background-color: hsl(40, 30%, 98%);
 }
 
 .text-text-dark {
   color: #333333;
 }
 
-.hover\:bg-primary\/90:hover {
-  background-color: rgba(45, 90, 135, 0.9);
+.hover\:bg-warm-orange\/90:hover {
+  background-color: hsl(25, 95%, 47%);
 }
 
-.hover\:bg-secondary\/90:hover {
-  background-color: rgba(247, 147, 30, 0.9);
+.hover\:bg-sky-blue\/90:hover {
+  background-color: hsl(200, 50%, 35%);
 }
 
-.bg-primary\/5 {
-  background-color: rgba(45, 90, 135, 0.05);
+.bg-warm-orange\/5 {
+  background-color: hsla(25, 95%, 53%, 0.05);
 }
 
-.bg-primary\/10 {
-  background-color: rgba(45, 90, 135, 0.1);
+.bg-warm-orange\/10 {
+  background-color: hsla(25, 95%, 53%, 0.1);
 }
 
-.bg-primary\/20 {
-  background-color: rgba(45, 90, 135, 0.2);
+.bg-warm-orange\/20 {
+  background-color: hsla(25, 95%, 53%, 0.2);
 }
 
-.bg-secondary\/5 {
-  background-color: rgba(247, 147, 30, 0.05);
+.bg-sky-blue\/5 {
+  background-color: hsla(200, 50%, 40%, 0.05);
 }
 
-.bg-secondary\/10 {
-  background-color: rgba(247, 147, 30, 0.1);
+.bg-sky-blue\/10 {
+  background-color: hsla(200, 50%, 40%, 0.1);
 }
 
-.bg-secondary\/20 {
-  background-color: rgba(247, 147, 30, 0.2);
+.bg-sky-blue\/20 {
+  background-color: hsla(200, 50%, 40%, 0.2);
 }
 
-.bg-accent\/5 {
-  background-color: rgba(76, 175, 80, 0.05);
+.bg-soft-green\/5 {
+  background-color: hsla(120, 35%, 55%, 0.05);
 }
 
-.bg-accent\/10 {
-  background-color: rgba(76, 175, 80, 0.1);
+.bg-soft-green\/10 {
+  background-color: hsla(120, 35%, 55%, 0.1);
 }
 
-.bg-accent\/20 {
-  background-color: rgba(76, 175, 80, 0.2);
+.bg-soft-green\/20 {
+  background-color: hsla(120, 35%, 55%, 0.2);
 }
 
-.from-primary\/10 {
-  --tw-gradient-from: rgba(45, 90, 135, 0.1);
+.from-warm-orange\/10 {
+  --tw-gradient-from: hsla(25, 95%, 53%, 0.1);
 }
 
-.to-secondary\/5 {
-  --tw-gradient-to: rgba(247, 147, 30, 0.05);
+.to-sky-blue\/5 {
+  --tw-gradient-to: hsla(200, 50%, 40%, 0.05);
+}
+
+/* Childcare-specific design elements */
+.rounded-playful {
+  border-radius: 1.5rem;
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-card {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .max-h-90vh {

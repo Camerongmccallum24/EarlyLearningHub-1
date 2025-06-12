@@ -56,7 +56,7 @@ export default function JobCard({ job }: JobCardProps) {
             </span>
           </div>
         </div>
-        <Badge variant="secondary" className="hover:bg-gro-lime/20 rounded-playful animate-pulse-subtle hover-scale self-start sm:self-auto text-[#374151] bg-[#60A5FA]">
+        <Badge variant="secondary" className="hover:bg-gro-lime/20 rounded-playful animate-pulse-subtle hover-scale self-start sm:self-auto text-[#374151]">
           {job.salary}
         </Badge>
       </div>

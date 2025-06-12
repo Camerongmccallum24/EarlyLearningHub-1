@@ -36,7 +36,7 @@ export default function Home() {
                     {heroContent.primaryCTA.label}
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-gro-blue-green text-gro-blue-green hover:bg-gro-blue-green hover:text-white rounded-playful hover-scale button-press transition-all duration-300 text-base sm:text-lg px-6 sm:px-8">
+                <Button asChild variant="outline" size="lg" className="border-gro-blue-green text-gro-blue-green hover:bg-gro-blue-green hover:text-white rounded-playful hover-scale button-press transition-all duration-300 text-base sm:text-lg px-6 sm:px-8 bg-[#93C5FD]">
                   <Link href={heroContent.secondaryCTA.href}>
                     {heroContent.secondaryCTA.label}
                   </Link>

@@ -269,7 +269,7 @@ const GroChatbot = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="hover:bg-gro-teal/90 rounded-full p-3 sm:p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl animate-pulse-subtle animate-float button-press bg-[#c8e8f4] text-[#ffffff]"
+          className="hover:bg-gro-teal/90 rounded-full p-3 sm:p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl animate-pulse-subtle animate-float button-press text-[#ffffff] bg-[#1E3A8A]"
           aria-label="Open chat"
         >
           <MessageCircle size={20} className="sm:w-6 sm:h-6 hover-scale transition-transform duration-200" />

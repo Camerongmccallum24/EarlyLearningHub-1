@@ -110,7 +110,7 @@ export default function Home() {
           )}
           
           <div className="text-center mt-8 sm:mt-12">
-            <Button asChild size="lg" className="bg-gro-lime hover:bg-gro-lime/90 text-white font-semibold px-6 sm:px-8 py-3">
+            <Button asChild size="lg" className="hover:bg-gro-lime/90 text-white font-semibold px-6 sm:px-8 py-3 bg-[#60A5FA]">
               <Link href="/jobs">
                 <i className="fas fa-plus mr-2"></i>
                 View All Positions

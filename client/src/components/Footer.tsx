@@ -12,20 +12,20 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">GRO Early Learning</h3>
-                <p className="text-xs text-gray-300">Career Opportunities</p>
+                <p className="text-xs text-[#374151]">Career Opportunities</p>
               </div>
             </div>
-            <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-[#374151] mb-4 sm:mb-6 leading-relaxed">
               Transforming early childhood education in regional Queensland, one community at a time.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-gro-lime transition-all duration-300 hover-scale button-press">
+              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 hover-scale button-press">
                 <i className="fab fa-facebook text-xl hover-rotate"></i>
               </a>
-              <a href="#" className="text-gray-300 hover:text-gro-lime transition-all duration-300 hover-scale button-press">
+              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 hover-scale button-press">
                 <i className="fab fa-linkedin text-xl hover-rotate"></i>
               </a>
-              <a href="#" className="text-gray-300 hover:text-gro-lime transition-all duration-300 hover-scale button-press">
+              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 hover-scale button-press">
                 <i className="fab fa-instagram text-xl hover-rotate"></i>
               </a>
             </div>
@@ -33,7 +33,7 @@ export default function Footer() {
           
           <div>
             <h4 className="text-lg font-semibold mb-3 sm:mb-4 text-gro-lime">Quick Links</h4>
-            <ul className="space-y-2 text-gray-300">
+            <ul className="space-y-2 text-[#374151]">
               <li><Link href="/jobs" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">Current Opportunities</Link></li>
               <li><Link href="/about" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">About Us</Link></li>
               <li><Link href="/benefits" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block text-sm">Benefits & Perks</Link></li>

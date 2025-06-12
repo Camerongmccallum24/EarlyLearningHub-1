@@ -19,26 +19,26 @@ export default function Footer() {
               Transforming early childhood education in regional Queensland, one community at a time.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-facebook text-xl"></i>
+              <a href="#" className="text-gray-400 hover:text-white transition-all duration-300 hover-scale button-press">
+                <i className="fab fa-facebook text-xl hover-rotate"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-linkedin text-xl"></i>
+              <a href="#" className="text-gray-400 hover:text-white transition-all duration-300 hover-scale button-press">
+                <i className="fab fa-linkedin text-xl hover-rotate"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <i className="fab fa-instagram text-xl"></i>
+              <a href="#" className="text-gray-400 hover:text-white transition-all duration-300 hover-scale button-press">
+                <i className="fab fa-instagram text-xl hover-rotate"></i>
               </a>
             </div>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 hover:text-gro-coral transition-colors duration-300">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link href="/jobs" className="hover:text-white transition-colors">Current Opportunities</Link></li>
-              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/benefits" className="hover:text-white transition-colors">Benefits & Perks</Link></li>
-              <li><Link href="/team" className="hover:text-white transition-colors">Meet Our Team</Link></li>
-              <li><Link href="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
+              <li><Link href="/jobs" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Current Opportunities</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">About Us</Link></li>
+              <li><Link href="/benefits" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Benefits & Perks</Link></li>
+              <li><Link href="/team" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Meet Our Team</Link></li>
+              <li><Link href="/faq" className="hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">FAQ</Link></li>
             </ul>
           </div>
           

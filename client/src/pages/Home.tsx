@@ -21,22 +21,22 @@ export default function Home() {
       <section className="bg-gradient-to-br from-warm-orange/10 via-warm-cream to-sky-blue/5 py-20 lg:py-32">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl lg:text-6xl font-bold text-sky-blue mb-6 leading-tight">
-                Join Our <span className="text-warm-orange">GRO Early Learning</span> Team
+            <div className="animate-fade-in-up">
+              <h1 className="text-4xl lg:text-6xl font-bold text-sky-blue mb-6 leading-tight hover:text-gro-teal transition-colors duration-500">
+                Join Our <span className="text-warm-orange hover:text-gro-coral transition-colors duration-300">GRO Early Learning</span> Team
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed animate-slide-in-right">
                 {heroContent.subtitle}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button asChild size="lg" className="bg-warm-orange hover:bg-warm-orange/90 rounded-playful shadow-card">
+                <Button asChild size="lg" className="bg-warm-orange hover:bg-warm-orange/90 rounded-playful shadow-card hover-lift button-press transition-all duration-300">
                   <Link href={heroContent.primaryCTA.href}>
-                    <i className="fas fa-briefcase mr-2"></i>
+                    <i className="fas fa-briefcase mr-2 hover-scale"></i>
                     {heroContent.primaryCTA.label}
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-sky-blue text-sky-blue hover:bg-sky-blue hover:text-white rounded-playful">
+                <Button asChild variant="outline" size="lg" className="border-sky-blue text-sky-blue hover:bg-sky-blue hover:text-white rounded-playful hover-scale button-press transition-all duration-300">
                   <Link href={heroContent.secondaryCTA.href}>
                     {heroContent.secondaryCTA.label}
                   </Link>
@@ -44,34 +44,34 @@ export default function Home() {
               </div>
               
               <div className="flex items-center space-x-6 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <i className="fas fa-map-marker-alt text-warm-orange mr-2"></i>
+                <div className="flex items-center hover:text-gro-coral transition-colors duration-200 hover-scale">
+                  <i className="fas fa-map-marker-alt text-warm-orange mr-2 hover-scale"></i>
                   <span>3 Locations</span>
                 </div>
-                <div className="flex items-center">
-                  <i className="fas fa-users text-soft-green mr-2"></i>
+                <div className="flex items-center hover:text-gro-coral transition-colors duration-200 hover-scale">
+                  <i className="fas fa-users text-soft-green mr-2 hover-scale"></i>
                   <span>50+ Team Members</span>
                 </div>
-                <div className="flex items-center">
-                  <i className="fas fa-star text-warm-orange mr-2"></i>
+                <div className="flex items-center hover:text-gro-coral transition-colors duration-200 hover-scale">
+                  <i className="fas fa-star text-warm-orange mr-2 hover-scale"></i>
                   <span>Award Winning</span>
                 </div>
               </div>
             </div>
             
-            <div className="relative">
+            <div className="relative animate-slide-in-right">
               <img 
                 src="https://images.unsplash.com/photo-1544377193-33dcf4d68fb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
                 alt="Early childhood educators with children" 
-                className="rounded-playful shadow-soft w-full h-auto"
+                className="rounded-playful shadow-soft w-full h-auto hover-lift transition-all duration-500"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-playful shadow-card">
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-playful shadow-card hover-lift animate-float">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-soft-green/20 rounded-full flex items-center justify-center">
-                    <i className="fas fa-heart text-soft-green text-xl"></i>
+                  <div className="w-12 h-12 bg-soft-green/20 rounded-full flex items-center justify-center animate-pulse-subtle">
+                    <i className="fas fa-heart text-soft-green text-xl hover-scale"></i>
                   </div>
                   <div>
-                    <p className="font-semibold text-sky-blue">{jobs.length}+ Active Positions</p>
+                    <p className="font-semibold text-sky-blue hover:text-gro-teal transition-colors duration-200">{jobs.length}+ Active Positions</p>
                     <p className="text-sm text-gray-600">Join our team today</p>
                   </div>
                 </div>

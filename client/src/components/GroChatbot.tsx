@@ -37,7 +37,7 @@ const GroChatbot = () => {
     { id: 'general', label: 'General', icon: MessageCircle, color: 'bg-sky-blue' },
     { id: 'jobs', label: 'Open Roles', icon: Briefcase, color: 'bg-soft-green' },
     { id: 'culture', label: 'Culture', icon: Users, color: 'bg-warm-orange' },
-    { id: 'faq', label: 'FAQ', icon: HelpCircle, color: 'bg-warm-orange' }
+    { id: 'faq', label: 'FAQ', icon: HelpCircle, color: 'bg-light-peach' }
   ];
 
   const quickResponses = {

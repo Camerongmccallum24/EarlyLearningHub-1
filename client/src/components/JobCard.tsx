@@ -37,7 +37,7 @@ export default function JobCard({ job }: JobCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-playful shadow-card hover:shadow-soft transition-all p-8 border border-orange-50">
+    <div className="bg-white rounded-playful shadow-card hover:shadow-soft transition-all p-8 border border-light-gray/30">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-semibold text-sky-blue mb-2">{job.title}</h3>

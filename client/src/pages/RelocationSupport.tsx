@@ -142,7 +142,7 @@ export default function RelocationSupport() {
           <TabsContent value="calculator" className="space-y-8">
             <Card>
               <CardHeader>
-                <CardTitle className="text-teal">Interactive Relocation Cost Calculator</CardTitle>
+                <CardTitle className="text-sky-blue">Interactive Relocation Cost Calculator</CardTitle>
                 <CardDescription>
                   Get a personalized estimate of your moving costs with GRO's relocation benefits included.
                 </CardDescription>
@@ -411,7 +411,7 @@ export default function RelocationSupport() {
 
                   <Card>
                     <CardHeader>
-                      <CardTitle className="text-teal flex items-center">
+                      <CardTitle className="text-sky-blue flex items-center">
                         <i className="fas fa-map-marked-alt mr-2"></i>
                         Recreation
                       </CardTitle>
@@ -567,13 +567,13 @@ export default function RelocationSupport() {
                 Contact us to discuss your specific needs and get personalized assistance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-gradient-to-r from-teal to-coral hover:from-teal/90 hover:to-coral/90 text-white">
+                <Button asChild size="lg" className="bg-gradient-to-r from-sky-blue to-warm-peach hover:from-sky-blue/90 hover:to-warm-peach/90 text-white">
                   <Link href="/jobs">
                     <i className="fas fa-search mr-2"></i>
                     Browse Available Positions
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-teal text-teal hover:bg-teal hover:text-white">
+                <Button asChild variant="outline" size="lg" className="border-sky-blue text-sky-blue hover:bg-sky-blue hover:text-white">
                   <a href="mailto:careers@groearlylearning.com">
                     <i className="fas fa-envelope mr-2"></i>
                     Contact HR Team

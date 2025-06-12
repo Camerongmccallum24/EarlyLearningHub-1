@@ -26,11 +26,11 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-light-gray">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3 hover-scale transition-transform duration-300">
             <div className="flex items-baseline">
-              <span className="text-4xl font-bold text-gro-blue-green">g</span>
-              <span className="text-4xl font-bold text-gro-coral">r</span>
-              <span className="text-4xl font-bold text-gro-lime">o</span>
+              <span className="text-4xl font-bold text-gro-blue-green hover:animate-bounce-gentle transition-all duration-200">g</span>
+              <span className="text-4xl font-bold text-gro-coral hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.1s'}}>r</span>
+              <span className="text-4xl font-bold text-gro-lime hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.2s'}}>o</span>
             </div>
             <div>
               <h1 className="text-xl font-bold text-charcoal uppercase tracking-wide">EARLY LEARNING</h1>
@@ -42,11 +42,11 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`transition-colors font-medium ${
+                className={`transition-all duration-300 font-medium hover-scale button-press relative ${
                   isActive(item.href)
                     ? "text-gro-coral"
                     : "text-gro-blue-green hover:text-gro-coral"
-                }`}
+                } after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-gro-coral after:left-0 after:-bottom-1 hover:after:w-full after:transition-all after:duration-300`}
               >
                 {item.label}
               </Link>
@@ -55,8 +55,8 @@ export default function Header() {
           
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
-                <i className="fas fa-bars text-xl"></i>
+              <Button variant="ghost" size="icon" className="md:hidden hover-scale button-press transition-all duration-200 hover:bg-gro-lime/20">
+                <i className="fas fa-bars text-xl hover-rotate transition-transform duration-300"></i>
               </Button>
             </SheetTrigger>
             <SheetContent>

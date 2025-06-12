@@ -37,26 +37,26 @@ export default function JobCard({ job }: JobCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-playful shadow-card hover:shadow-soft transition-all p-8 border border-light-gray/30">
+    <div className="bg-white rounded-playful shadow-card hover:shadow-soft transition-all p-8 border border-light-gray/30 hover-lift animate-fade-in-up">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="text-xl font-semibold text-sky-blue mb-2">{job.title}</h3>
+          <h3 className="text-xl font-semibold text-sky-blue mb-2 hover:text-gro-teal transition-colors duration-300">{job.title}</h3>
           <div className="flex items-center space-x-4 text-sm text-gray-600">
-            <span className="flex items-center">
-              <i className="fas fa-map-marker-alt text-warm-orange mr-1"></i>
+            <span className="flex items-center hover:text-gro-coral transition-colors duration-200">
+              <i className="fas fa-map-marker-alt text-warm-orange mr-1 hover-scale"></i>
               <span>{job.location}</span>
             </span>
-            <span className="flex items-center">
-              <i className="fas fa-clock text-soft-green mr-1"></i>
+            <span className="flex items-center hover:text-gro-coral transition-colors duration-200">
+              <i className="fas fa-clock text-soft-green mr-1 hover-scale"></i>
               <span>{job.type}</span>
             </span>
-            <span className="flex items-center">
-              <i className={`fas fa-tag mr-1 ${getDepartmentColor(job.department)}`}></i>
+            <span className="flex items-center hover:text-gro-coral transition-colors duration-200">
+              <i className={`fas fa-tag mr-1 hover-scale ${getDepartmentColor(job.department)}`}></i>
               <span>{job.department}</span>
             </span>
           </div>
         </div>
-        <Badge variant="secondary" className="bg-soft-green/10 text-soft-green hover:bg-soft-green/20 rounded-playful">
+        <Badge variant="secondary" className="bg-soft-green/10 text-soft-green hover:bg-soft-green/20 rounded-playful animate-pulse-subtle hover-scale">
           {job.salary}
         </Badge>
       </div>
@@ -65,7 +65,7 @@ export default function JobCard({ job }: JobCardProps) {
       
       <div className="flex flex-wrap gap-2 mb-6">
         {job.requirements.map((req, index) => (
-          <Badge key={index} variant="outline" className="text-xs">
+          <Badge key={index} variant="outline" className="text-xs hover-scale transition-transform duration-200 hover:bg-gro-lime/20 hover:border-gro-lime">
             {req}
           </Badge>
         ))}
@@ -73,12 +73,12 @@ export default function JobCard({ job }: JobCardProps) {
       
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-500 hover:text-gro-coral transition-colors duration-200">
             Posted {formatPostedDate(job.postedDate)}
           </span>
           <LocationInfo locationName={job.location} />
         </div>
-        <Button asChild>
+        <Button asChild className="button-press hover-scale transition-all duration-200 hover:bg-gro-teal hover:text-white animate-bounce-gentle">
           <Link href={`/jobs/${job.id}`}>
             View Details
           </Link>

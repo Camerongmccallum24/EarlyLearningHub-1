@@ -18,26 +18,26 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gro-coral/10 via-white to-gro-lime/5 py-16 sm:py-20 lg:py-32">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <section className="bg-gradient-to-br from-gro-coral/10 via-white to-gro-lime/5 py-12 sm:py-16 lg:py-32 mobile-padding">
+        <div className="container mx-auto px-3 sm:px-4">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
             <div className="animate-fade-in-up text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight hover:text-gro-teal transition-colors duration-500 text-[#60A5FA]">
+              <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight hover:text-gro-teal transition-colors duration-500 text-[#60A5FA]">
                 Join Our <span className="hover:text-gro-teal transition-colors duration-300 text-[#f79939]">GRO Early Learning</span> Team
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed animate-slide-in-right">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed animate-slide-in-right">
                 {heroContent.subtitle}
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8 justify-center lg:justify-start">
-                <Button asChild size="lg" className="bg-gro-coral hover:bg-gro-coral/90 rounded-playful shadow-card hover-lift button-press transition-all duration-300 text-base sm:text-lg px-6 sm:px-8">
-                  <Link href={heroContent.primaryCTA.href}>
+              <div className="flex flex-col gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center lg:justify-start">
+                <Button asChild size="lg" className="touch-button bg-gro-coral hover:bg-gro-coral/90 rounded-playful shadow-card hover-lift text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto">
+                  <Link href={heroContent.primaryCTA.href} className="flex items-center justify-center">
                     <i className="fas fa-briefcase mr-2 hover-scale"></i>
                     {heroContent.primaryCTA.label}
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="default" className="border-gro-blue-green text-gro-blue-green hover:bg-gro-blue-green hover:text-white rounded-playful hover-scale button-press transition-all duration-300 text-sm sm:text-base px-4 sm:px-6 h-9">
-                  <Link href={heroContent.secondaryCTA.href}>
+                <Button asChild variant="outline" size="default" className="touch-button border-gro-blue-green text-gro-blue-green hover:bg-gro-blue-green hover:text-white rounded-playful text-sm sm:text-base px-4 sm:px-6 w-full sm:w-auto">
+                  <Link href={heroContent.secondaryCTA.href} className="flex items-center justify-center">
                     {heroContent.secondaryCTA.label}
                   </Link>
                 </Button>

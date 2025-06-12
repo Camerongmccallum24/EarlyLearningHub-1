@@ -37,12 +37,12 @@ export default function Jobs() {
                           (typeFilter && typeFilter !== "all");
 
   return (
-    <div className="py-16 sm:py-20">
-      <div className="container mx-auto px-4">
+    <div className="py-12 sm:py-16 lg:py-20 mobile-padding">
+      <div className="container mx-auto px-3 sm:px-4">
         {/* Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gro-blue-green mb-4">Current Opportunities</h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-gro-blue-green mb-4">Current Opportunities</h1>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Discover meaningful career opportunities in early childhood education across our regional locations.
           </p>
         </div>
@@ -54,9 +54,9 @@ export default function Jobs() {
               variant={viewMode === "list" ? "default" : "ghost"}
               size="sm"
               onClick={() => setViewMode("list")}
-              className="flex items-center space-x-2 text-xs sm:text-sm"
+              className="touch-target flex items-center space-x-2 text-xs sm:text-sm px-4 py-2"
             >
-              <List className="w-3 h-3 sm:w-4 sm:h-4" />
+              <List className="w-4 h-4" />
               <span className="hidden sm:inline">List View</span>
               <span className="sm:hidden">List</span>
             </Button>
@@ -64,9 +64,9 @@ export default function Jobs() {
               variant={viewMode === "map" ? "default" : "ghost"}
               size="sm"
               onClick={() => setViewMode("map")}
-              className="flex items-center space-x-2 text-xs sm:text-sm"
+              className="touch-target flex items-center space-x-2 text-xs sm:text-sm px-4 py-2"
             >
-              <Map className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Map className="w-4 h-4" />
               <span className="hidden sm:inline">Map View</span>
               <span className="sm:hidden">Map</span>
             </Button>
@@ -88,12 +88,12 @@ export default function Jobs() {
         {viewMode === "list" && (
           <>
             {/* Filters */}
-            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm mb-8 sm:mb-12">
-              <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm mb-6 sm:mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
                   <Select value={locationFilter} onValueChange={setLocationFilter}>
-                    <SelectTrigger className="text-sm">
+                    <SelectTrigger className="text-sm min-h-[44px] touch-target">
                       <SelectValue placeholder="All Locations" />
                     </SelectTrigger>
                     <SelectContent>

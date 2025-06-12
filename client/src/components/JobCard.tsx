@@ -89,8 +89,8 @@ export default function JobCard({ job }: JobCardProps) {
             <LocationInfo locationName={job.location} />
           </div>
         </div>
-        <Button asChild className="button-press hover-scale transition-all duration-200 bg-gro-coral hover:bg-gro-coral/90 text-white w-full sm:w-auto">
-          <Link href={`/jobs/${job.id}`}>
+        <Button asChild className="touch-button bg-gro-coral hover:bg-gro-coral/90 text-white w-full sm:w-auto">
+          <Link href={`/jobs/${job.id}`} className="flex items-center justify-center">
             View Details
           </Link>
         </Button>

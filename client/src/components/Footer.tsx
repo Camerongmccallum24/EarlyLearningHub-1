@@ -2,30 +2,30 @@ import { Link } from "wouter";
 
 export default function Footer() {
   return (
-    <footer className="bg-gro-dark-blue text-white py-12 sm:py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4 sm:mb-6">
+    <footer className="bg-gro-dark-blue text-white py-8 sm:py-12 lg:py-16 mobile-padding">
+      <div className="container mx-auto px-3 sm:px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="sm:col-span-2 lg:col-span-1 text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4 sm:mb-6">
               <div className="w-10 h-10 bg-gro-coral rounded-lg flex items-center justify-center">
                 <i className="fas fa-child text-white text-lg"></i>
               </div>
               <div>
-                <h3 className="text-xl font-bold">GRO Early Learning</h3>
+                <h3 className="text-lg sm:text-xl font-bold">GRO Early Learning</h3>
                 <p className="text-xs text-[#374151]">Career Opportunities</p>
               </div>
             </div>
-            <p className="text-[#374151] mb-4 sm:mb-6 leading-relaxed">
+            <p className="text-[#374151] mb-4 sm:mb-6 leading-relaxed text-sm">
               Transforming early childhood education in regional Queensland, one community at a time.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 hover-scale button-press">
+            <div className="flex justify-center sm:justify-start space-x-4">
+              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 touch-target">
                 <i className="fab fa-facebook text-xl hover-rotate"></i>
               </a>
-              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 hover-scale button-press">
+              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 touch-target">
                 <i className="fab fa-linkedin text-xl hover-rotate"></i>
               </a>
-              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 hover-scale button-press">
+              <a href="#" className="text-[#374151] hover:text-gro-lime transition-all duration-300 touch-target">
                 <i className="fab fa-instagram text-xl hover-rotate"></i>
               </a>
             </div>

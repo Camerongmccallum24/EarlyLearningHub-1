@@ -52,8 +52,7 @@ export const insertJobApplicationSchema = createInsertSchema(jobApplications).om
 
 export const insertJobSchema = createInsertSchema(jobs).omit({
   id: true,
-  postedDate: true,
-  isActive: true,
+  createdAt: true,
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;

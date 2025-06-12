@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database for Development
+  database:
+    image: postgres:15-alpine
+    container_name: gro-careers-db-dev
+    environment:
+      POSTGRES_DB: gro_careers_dev
+      POSTGRES_USER: gro_dev
+      POSTGRES_PASSWORD: dev_password_123
+    volumes:
+      - postgres_dev_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - gro-dev-network
+
+  # Development Web Server
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: gro-careers-web-dev
+    environment:
+      NODE_ENV: development
+      PORT: 5000
+      DATABASE_URL: postgresql://gro_dev:dev_password_123@database:5432/gro_careers_dev
+      DATABASE_URL_ATS: postgresql://gro_dev:dev_password_123@database:5432/gro_careers_dev
+      PGHOST: database
+      PGPORT: 5432
+      PGUSER: gro_dev
+      PGPASSWORD: dev_password_123
+      PGDATABASE: gro_careers_dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - database
+    networks:
+      - gro-dev-network
+    command: npm run dev
+
+volumes:
+  postgres_dev_data:
+    driver: local
+
+networks:
+  gro-dev-network:
+    driver: bridge

@@ -1,0 +1,27 @@
+# Development Dockerfile for GRO Early Learning Career Website
+FROM node:20-alpine
+
+# Install development tools
+RUN apk add --no-cache git
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including dev dependencies)
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Expose development port
+EXPOSE 5000
+
+# Development health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:5000/api/jobs || exit 1
+
+# Start development server with hot reload
+CMD ["npm", "run", "dev"]

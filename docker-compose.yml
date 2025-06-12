@@ -1,0 +1,99 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  database:
+    image: postgres:15-alpine
+    container_name: gro-careers-db
+    environment:
+      POSTGRES_DB: gro_careers
+      POSTGRES_USER: gro_user
+      POSTGRES_PASSWORD: gro_secure_password
+      POSTGRES_INITDB_ARGS: "--auth-host=scram-sha-256 --auth-local=scram-sha-256"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - gro-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gro_user -d gro_careers"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # GRO Early Learning Career Website
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gro-careers-web
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      DATABASE_URL: postgresql://gro_user:gro_secure_password@database:5432/gro_careers
+      DATABASE_URL_ATS: postgresql://gro_user:gro_secure_password@database:5432/gro_careers
+      PGHOST: database
+      PGPORT: 5432
+      PGUSER: gro_user
+      PGPASSWORD: gro_secure_password
+      PGDATABASE: gro_careers
+    ports:
+      - "5000:5000"
+    depends_on:
+      database:
+        condition: service_healthy
+    networks:
+      - gro-network
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5000/api/jobs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis Cache (Optional)
+  redis:
+    image: redis:7-alpine
+    container_name: gro-careers-cache
+    ports:
+      - "6379:6379"
+    networks:
+      - gro-network
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Nginx Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: gro-careers-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - web
+    networks:
+      - gro-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  gro-network:
+    driver: bridge

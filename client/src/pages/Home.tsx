@@ -18,34 +18,34 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-warm-orange/10 via-warm-cream to-sky-blue/5 py-20 lg:py-32">
+      <section className="bg-gradient-to-br from-gro-coral/10 via-white to-gro-lime/5 py-16 sm:py-20 lg:py-32">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-up">
-              <h1 className="text-4xl lg:text-6xl font-bold text-sky-blue mb-6 leading-tight hover:text-gro-teal transition-colors duration-500">
-                Join Our <span className="text-warm-orange hover:text-gro-dark-blue transition-colors duration-300">GRO Early Learning</span> Team
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="animate-fade-in-up text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gro-dark-blue mb-4 sm:mb-6 leading-tight hover:text-gro-teal transition-colors duration-500">
+                Join Our <span className="text-gro-coral hover:text-gro-dark-blue transition-colors duration-300">GRO Early Learning</span> Team
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed animate-slide-in-right">
+              <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed animate-slide-in-right">
                 {heroContent.subtitle}
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button asChild size="lg" className="bg-warm-orange hover:bg-warm-orange/90 rounded-playful shadow-card hover-lift button-press transition-all duration-300">
+              <div className="flex flex-col sm:flex-row gap-4 mb-6 sm:mb-8 justify-center lg:justify-start">
+                <Button asChild size="lg" className="bg-gro-coral hover:bg-gro-coral/90 rounded-playful shadow-card hover-lift button-press transition-all duration-300 text-base sm:text-lg px-6 sm:px-8">
                   <Link href={heroContent.primaryCTA.href}>
                     <i className="fas fa-briefcase mr-2 hover-scale"></i>
                     {heroContent.primaryCTA.label}
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-sky-blue text-sky-blue hover:bg-sky-blue hover:text-white rounded-playful hover-scale button-press transition-all duration-300">
+                <Button asChild variant="outline" size="lg" className="border-gro-blue-green text-gro-blue-green hover:bg-gro-blue-green hover:text-white rounded-playful hover-scale button-press transition-all duration-300 text-base sm:text-lg px-6 sm:px-8">
                   <Link href={heroContent.secondaryCTA.href}>
                     {heroContent.secondaryCTA.label}
                   </Link>
                 </Button>
               </div>
               
-              <div className="flex items-center space-x-6 text-sm text-gray-600">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-600">
                 <div className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 hover-scale">
-                  <i className="fas fa-map-marker-alt text-warm-orange mr-2 hover-scale"></i>
+                  <i className="fas fa-map-marker-alt text-gro-coral mr-2 hover-scale"></i>
                   <span>3 Locations</span>
                 </div>
                 <div className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 hover-scale">
@@ -82,19 +82,19 @@ export default function Home() {
       </section>
 
       {/* Featured Jobs Section */}
-      <section className="py-20 bg-warm-cream">
+      <section className="py-16 sm:py-20 bg-gro-blue-green/5">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-sky-blue mb-4">Featured Opportunities</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gro-dark-blue mb-4">Featured Opportunities</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover meaningful career opportunities in early childhood education across our regional locations.
             </p>
           </div>
           
           {isLoading ? (
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="bg-white rounded-xl shadow-sm p-8 animate-pulse">
+                <div key={i} className="bg-white rounded-xl shadow-sm p-6 sm:p-8 animate-pulse">
                   <div className="h-6 bg-gray-200 rounded mb-4"></div>
                   <div className="h-4 bg-gray-200 rounded mb-6"></div>
                   <div className="h-20 bg-gray-200 rounded"></div>
@@ -102,15 +102,15 @@ export default function Home() {
               ))}
             </div>
           ) : (
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
               {featuredJobs.map((job) => (
                 <JobCard key={job.id} job={job} />
               ))}
             </div>
           )}
           
-          <div className="text-center mt-12">
-            <Button asChild size="lg" className="hover:bg-secondary/90 bg-[#cfd86f]">
+          <div className="text-center mt-8 sm:mt-12">
+            <Button asChild size="lg" className="bg-gro-lime hover:bg-gro-lime/90 text-white font-semibold px-6 sm:px-8 py-3">
               <Link href="/jobs">
                 <i className="fas fa-plus mr-2"></i>
                 View All Positions
@@ -121,47 +121,47 @@ export default function Home() {
       </section>
 
       {/* Locations Section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gro-blue-green mb-4">Our Locations</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gro-blue-green mb-4">Our Locations</h2>
+            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Discover opportunities across Queensland's vibrant regional communities, each offering unique lifestyle benefits and career growth potential.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {locations.map((location, index) => (
-              <div key={index} className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 text-center">
+              <div key={index} className="bg-gradient-to-br from-gro-coral/5 to-gro-lime/5 rounded-2xl p-6 sm:p-8 text-center hover-lift transition-all duration-300">
                 <img 
                   src={location.image} 
                   alt={`${location.name} cityscape`} 
-                  className="w-full h-48 object-cover rounded-xl mb-6"
+                  className="w-full h-40 sm:h-48 object-cover rounded-xl mb-4 sm:mb-6"
                 />
                 
-                <h3 className="text-2xl font-bold text-gro-dark-blue mb-4">{location.name}</h3>
-                <p className="text-gray-600 mb-6">{location.description}</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-gro-dark-blue mb-3 sm:mb-4">{location.name}</h3>
+                <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base leading-relaxed">{location.description}</p>
                 
-                <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-                  <div className="bg-white p-3 rounded-lg">
-                    <div className="font-semibold text-primary">Climate</div>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6 text-xs sm:text-sm">
+                  <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                    <div className="font-semibold text-gro-coral">Climate</div>
                     <div className="text-gray-600">{location.details.climate}</div>
                   </div>
-                  <div className="bg-white p-3 rounded-lg">
-                    <div className="font-semibold text-primary">Housing</div>
+                  <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                    <div className="font-semibold text-gro-coral">Housing</div>
                     <div className="text-gray-600">{location.details.housing}</div>
                   </div>
-                  <div className="bg-white p-3 rounded-lg">
-                    <div className="font-semibold text-primary">Transport</div>
+                  <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                    <div className="font-semibold text-gro-coral">Transport</div>
                     <div className="text-gray-600">{location.details.transport}</div>
                   </div>
-                  <div className="bg-white p-3 rounded-lg">
-                    <div className="font-semibold text-primary">Recreation</div>
+                  <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                    <div className="font-semibold text-gro-coral">Recreation</div>
                     <div className="text-gray-600">{location.details.recreation}</div>
                   </div>
                 </div>
                 
-                <Button className="bg-primary hover:bg-primary/90">
+                <Button className="bg-gro-blue-green hover:bg-gro-blue-green/90 text-white w-full sm:w-auto">
                   <i className="fas fa-info-circle mr-2"></i>
                   Learn More
                 </Button>

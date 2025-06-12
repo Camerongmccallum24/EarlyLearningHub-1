@@ -26,14 +26,14 @@ export default function Header() {
     <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-light-gray">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-3 hover-scale transition-transform duration-300">
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 hover-scale transition-transform duration-300">
             <div className="flex items-baseline">
-              <span className="text-4xl font-bold text-gro-blue-green hover:animate-bounce-gentle transition-all duration-200">g</span>
-              <span className="text-4xl font-bold text-gro-dark-blue hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.1s'}}>r</span>
-              <span className="text-4xl font-bold text-gro-lime hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.2s'}}>o</span>
+              <span className="text-3xl sm:text-4xl font-bold text-gro-blue-green hover:animate-bounce-gentle transition-all duration-200">g</span>
+              <span className="text-3xl sm:text-4xl font-bold text-gro-dark-blue hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.1s'}}>r</span>
+              <span className="text-3xl sm:text-4xl font-bold text-gro-lime hover:animate-bounce-gentle transition-all duration-200" style={{animationDelay: '0.2s'}}>o</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-charcoal uppercase tracking-wide">EARLY LEARNING</h1>
+              <h1 className="text-sm sm:text-xl font-bold text-charcoal uppercase tracking-wide">EARLY LEARNING</h1>
             </div>
           </Link>
           
@@ -59,19 +59,23 @@ export default function Header() {
                 <i className="fas fa-bars text-xl hover-rotate transition-transform duration-300"></i>
               </Button>
             </SheetTrigger>
-            <SheetContent>
-              <div className="flex flex-col space-y-4 mt-8">
+            <SheetContent className="w-80 bg-gradient-to-br from-gro-blue-green/5 to-gro-lime/5">
+              <div className="flex flex-col space-y-6 mt-8">
+                <div className="text-center pb-4 border-b border-gro-blue-green/20">
+                  <h2 className="text-2xl font-bold text-gro-dark-blue">Menu</h2>
+                </div>
                 {navigationItems.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-lg transition-colors font-medium ${
+                    className={`text-lg transition-all duration-300 font-medium p-3 rounded-lg hover-scale ${
                       isActive(item.href)
-                        ? "text-warm-orange"
-                        : "text-sky-blue hover:text-warm-orange"
+                        ? "text-white bg-gro-dark-blue shadow-lg"
+                        : "text-gro-blue-green hover:text-white hover:bg-gro-coral"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
+                    <i className="fas fa-chevron-right mr-3 text-sm"></i>
                     {item.label}
                   </Link>
                 ))}

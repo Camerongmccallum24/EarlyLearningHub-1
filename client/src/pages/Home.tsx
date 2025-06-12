@@ -23,7 +23,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="animate-fade-in-up text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gro-dark-blue mb-4 sm:mb-6 leading-tight hover:text-gro-teal transition-colors duration-500">
-                Join Our <span className="text-gro-coral hover:text-gro-dark-blue transition-colors duration-300">GRO Early Learning</span> Team
+                Join Our <span className="text-gro-dark-blue hover:text-gro-teal transition-colors duration-300">GRO Early Learning</span> Team
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed animate-slide-in-right">
                 {heroContent.subtitle}
@@ -45,7 +45,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-600">
                 <div className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 hover-scale">
-                  <i className="fas fa-map-marker-alt text-gro-coral mr-2 hover-scale"></i>
+                  <i className="fas fa-map-marker-alt text-gro-dark-blue mr-2 hover-scale"></i>
                   <span>3 Locations</span>
                 </div>
                 <div className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 hover-scale">
@@ -144,19 +144,19 @@ export default function Home() {
                 
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6 text-xs sm:text-sm">
                   <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
-                    <div className="font-semibold text-gro-coral">Climate</div>
+                    <div className="font-semibold text-gro-dark-blue">Climate</div>
                     <div className="text-gray-600">{location.details.climate}</div>
                   </div>
                   <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
-                    <div className="font-semibold text-gro-coral">Housing</div>
+                    <div className="font-semibold text-gro-dark-blue">Housing</div>
                     <div className="text-gray-600">{location.details.housing}</div>
                   </div>
                   <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
-                    <div className="font-semibold text-gro-coral">Transport</div>
+                    <div className="font-semibold text-gro-dark-blue">Transport</div>
                     <div className="text-gray-600">{location.details.transport}</div>
                   </div>
                   <div className="bg-white p-2 sm:p-3 rounded-lg shadow-sm">
-                    <div className="font-semibold text-gro-coral">Recreation</div>
+                    <div className="font-semibold text-gro-dark-blue">Recreation</div>
                     <div className="text-gray-600">{location.details.recreation}</div>
                   </div>
                 </div>

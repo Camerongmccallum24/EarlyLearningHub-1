@@ -55,15 +55,15 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-3 sm:mb-4 text-gro-lime">Contact Us</h4>
             <div className="space-y-3 sm:space-y-4 text-gray-300">
               <div className="flex items-center">
-                <i className="fas fa-envelope mr-3 text-gro-coral"></i>
+                <i className="fas fa-envelope mr-3 text-gro-lime"></i>
                 <span className="text-sm">careers@gro.com.au</span>
               </div>
               <div className="flex items-center">
-                <i className="fas fa-phone mr-3 text-gro-coral"></i>
+                <i className="fas fa-phone mr-3 text-gro-lime"></i>
                 <span className="text-sm">1800 476 123</span>
               </div>
               <div className="flex items-start">
-                <i className="fas fa-map-marker-alt mr-3 text-gro-coral mt-1"></i>
+                <i className="fas fa-map-marker-alt mr-3 text-gro-lime mt-1"></i>
                 <span className="text-sm">Queensland, Australia</span>
               </div>
             </div>

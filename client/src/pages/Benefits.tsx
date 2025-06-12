@@ -6,7 +6,7 @@ export default function Benefits() {
   const getIconColorClass = (color: string) => {
     switch (color) {
       case 'primary': return 'text-gro-blue-green';
-      case 'secondary': return 'text-gro-coral';
+      case 'secondary': return 'text-gro-blue-green';
       case 'accent': return 'text-gro-lime';
       case 'wellness': return 'text-gro-teal';
       default: return 'text-gro-blue-green';

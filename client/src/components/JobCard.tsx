@@ -8,9 +8,16 @@ interface JobCardProps {
 }
 
 export default function JobCard({ job }: JobCardProps) {
-  const formatPostedDate = (date: Date) => {
+  const formatPostedDate = (date: Date | string) => {
     const now = new Date();
-    const diffTime = Math.abs(now.getTime() - date.getTime());
+    const postedDate = typeof date === 'string' ? new Date(date) : date;
+    
+    // Check if the date is valid
+    if (isNaN(postedDate.getTime())) {
+      return "Recently posted";
+    }
+    
+    const diffTime = Math.abs(now.getTime() - postedDate.getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
     if (diffDays === 1) return "1 day ago";

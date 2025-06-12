@@ -67,17 +67,15 @@ export default function JobMap({ onLocationSelect, selectedLocation }: JobMapPro
     return jobs.filter(job => job.location === locationName).length;
   };
 
-  // Create Google Maps embed URL with all three locations
+  // Create Google Maps embed URL showing the Queensland region
   const createGoogleMapsEmbedUrl = () => {
-    const centerLat = (locations[0].coordinates.lat + locations[1].coordinates.lat + locations[2].coordinates.lat) / 3;
-    const centerLng = (locations[0].coordinates.lng + locations[1].coordinates.lng + locations[2].coordinates.lng) / 3;
+    // Center map on Queensland to show all three locations
+    const centerLat = -21.0;
+    const centerLng = 142.0;
+    const zoom = 6;
     
-    // Create markers for all locations
-    const markers = locations.map(location => 
-      `markers=color:red%7Clabel:${location.name.charAt(0)}%7C${location.coordinates.lat},${location.coordinates.lng}`
-    ).join('&');
-    
-    return `https://www.google.com/maps/embed/v1/view?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dw901SwHHqfeXs&center=${centerLat},${centerLng}&zoom=6&${markers}`;
+    // Use a simple embed without API key for basic viewing
+    return `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000000!2d${centerLng}!3d${centerLat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f${zoom}!5e0!3m2!1sen!2sau!4v1600000000000!5m2!1sen!2sau`;
   };
 
   const GoogleMapsEmbed = () => (

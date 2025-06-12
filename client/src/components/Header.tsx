@@ -62,7 +62,7 @@ export default function Header() {
             <SheetContent className="w-80 bg-gradient-to-br from-gro-blue-green/5 to-gro-lime/5">
               <div className="flex flex-col space-y-6 mt-8">
                 <div className="text-center pb-4 border-b border-gro-blue-green/20">
-                  <h2 className="text-2xl font-bold text-gro-dark-blue">Menu</h2>
+                  <h2 className="text-2xl font-bold text-[#60A5FA]">Menu</h2>
                 </div>
                 {navigationItems.map((item) => (
                   <Link

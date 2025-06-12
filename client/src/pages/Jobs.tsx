@@ -17,19 +17,21 @@ export default function Jobs() {
   });
 
   const filteredJobs = jobs.filter(job => {
-    if (locationFilter && job.location !== locationFilter) return false;
-    if (departmentFilter && job.department !== departmentFilter) return false;
-    if (typeFilter && job.type !== typeFilter) return false;
+    if (locationFilter && locationFilter !== "all" && job.location !== locationFilter) return false;
+    if (departmentFilter && departmentFilter !== "all" && job.department !== departmentFilter) return false;
+    if (typeFilter && typeFilter !== "all" && job.type !== typeFilter) return false;
     return true;
   });
 
   const clearFilters = () => {
-    setLocationFilter("");
-    setDepartmentFilter("");
-    setTypeFilter("");
+    setLocationFilter("all");
+    setDepartmentFilter("all");
+    setTypeFilter("all");
   };
 
-  const hasActiveFilters = locationFilter || departmentFilter || typeFilter;
+  const hasActiveFilters = (locationFilter && locationFilter !== "all") || 
+                          (departmentFilter && departmentFilter !== "all") || 
+                          (typeFilter && typeFilter !== "all");
 
   return (
     <div className="py-20">
@@ -52,7 +54,7 @@ export default function Jobs() {
                   <SelectValue placeholder="All Locations" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Locations</SelectItem>
+                  <SelectItem value="all">All Locations</SelectItem>
                   <SelectItem value="Mount Isa">Mount Isa</SelectItem>
                   <SelectItem value="Moranbah">Moranbah</SelectItem>
                   <SelectItem value="Charters Towers">Charters Towers</SelectItem>
@@ -67,7 +69,7 @@ export default function Jobs() {
                   <SelectValue placeholder="All Departments" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Departments</SelectItem>
+                  <SelectItem value="all">All Departments</SelectItem>
                   <SelectItem value="Teaching">Teaching</SelectItem>
                   <SelectItem value="Management">Management</SelectItem>
                   <SelectItem value="Support">Support</SelectItem>
@@ -82,7 +84,7 @@ export default function Jobs() {
                   <SelectValue placeholder="All Types" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Types</SelectItem>
+                  <SelectItem value="all">All Types</SelectItem>
                   <SelectItem value="Full-Time">Full-Time</SelectItem>
                   <SelectItem value="Part-Time">Part-Time</SelectItem>
                 </SelectContent>

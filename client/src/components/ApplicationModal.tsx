@@ -208,7 +208,7 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle, jobLocatio
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="">Any location</SelectItem>
+                      <SelectItem value="any">Any location</SelectItem>
                       <SelectItem value="Mount Isa">Mount Isa</SelectItem>
                       <SelectItem value="Moranbah">Moranbah</SelectItem>
                       <SelectItem value="Charters Towers">Charters Towers</SelectItem>

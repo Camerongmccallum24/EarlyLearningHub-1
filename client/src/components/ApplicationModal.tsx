@@ -228,7 +228,8 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle, jobLocatio
                   <FormControl>
                     <Input 
                       placeholder="https://drive.google.com/... or similar link to your resume"
-                      {...field} 
+                      {...field}
+                      value={field.value || ""}
                     />
                   </FormControl>
                   <FormMessage />
@@ -247,6 +248,7 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle, jobLocatio
                       rows={4}
                       placeholder="Tell us why you're interested in this position and what you'd bring to our team..."
                       {...field}
+                      value={field.value || ""}
                     />
                   </FormControl>
                   <FormMessage />

@@ -180,16 +180,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.log("📦 Using local job data as fallback");
       const { location, department, type } = req.query;
       
-      let jobs;
+      let dbJobs;
       if (location && typeof location === 'string') {
-        jobs = await storage.getJobsByLocation(location);
+        dbJobs = await storage.getJobsByLocation(location);
       } else if (department && typeof department === 'string') {
-        jobs = await storage.getJobsByDepartment(department);
+        dbJobs = await storage.getJobsByDepartment(department);
       } else if (type && typeof type === 'string') {
-        jobs = await storage.getJobsByType(type);
+        dbJobs = await storage.getJobsByType(type);
       } else {
-        jobs = await storage.getJobs();
+        dbJobs = await storage.getJobs();
       }
+      
+      // Transform database jobs to match frontend expectations
+      const jobs = dbJobs.map(job => ({
+        ...job,
+        postedDate: job.postedAt.toISOString(),
+        overview: job.overview || job.description?.substring(0, 150) + "..." || "Join our team in providing quality early childhood education.",
+        responsibilities: job.responsibilities || []
+      }));
       
       res.json(jobs);
       
@@ -244,11 +252,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Fallback to local storage
       console.log("📦 Using local job data as fallback");
-      const job = await storage.getJob(id);
+      const dbJob = await storage.getJob(id);
       
-      if (!job) {
+      if (!dbJob) {
         return res.status(404).json({ message: "Job not found" });
       }
+      
+      // Transform database job to match frontend expectations
+      const job = {
+        ...dbJob,
+        postedDate: dbJob.postedAt.toISOString(),
+        overview: dbJob.overview || dbJob.description?.substring(0, 150) + "..." || "Join our team in providing quality early childhood education.",
+        responsibilities: dbJob.responsibilities || []
+      };
       
       res.json(job);
     } catch (error) {

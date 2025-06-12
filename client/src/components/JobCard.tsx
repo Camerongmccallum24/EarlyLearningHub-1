@@ -9,7 +9,11 @@ interface JobCardProps {
 }
 
 export default function JobCard({ job }: JobCardProps) {
-  const formatPostedDate = (date: Date | string) => {
+  const formatPostedDate = (date: Date | string | undefined) => {
+    if (!date) {
+      return "Recently posted";
+    }
+    
     const now = new Date();
     const postedDate = typeof date === 'string' ? new Date(date) : date;
     

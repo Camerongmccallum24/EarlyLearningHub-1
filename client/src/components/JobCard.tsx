@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import LocationInfo from "@/components/LocationInfo";
 import type { Job } from "@shared/schema";
 
 interface JobCardProps {
@@ -71,9 +72,12 @@ export default function JobCard({ job }: JobCardProps) {
       </div>
       
       <div className="flex justify-between items-center">
-        <span className="text-sm text-gray-500">
-          Posted {formatPostedDate(job.postedDate)}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-gray-500">
+            Posted {formatPostedDate(job.postedDate)}
+          </span>
+          <LocationInfo locationName={job.location} />
+        </div>
         <Button asChild>
           <Link href={`/jobs/${job.id}`}>
             View Details

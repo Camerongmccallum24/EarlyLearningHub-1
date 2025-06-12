@@ -399,6 +399,7 @@ const GroChatbot = () => {
                 <div className="bg-white text-gray-800 p-3 rounded-lg rounded-bl-sm shadow-sm border border-gray-100">
                   <div className="flex items-center gap-2">
                     <Bot size={16} className="text-blue-500" />
+                    <span className="text-xs text-gray-500">AI is thinking</span>
                     <div className="flex space-x-1">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce"></div>
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>

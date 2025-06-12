@@ -110,7 +110,7 @@ export default function Home() {
           )}
           
           <div className="text-center mt-12">
-            <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90">
+            <Button asChild size="lg" className="hover:bg-secondary/90 bg-[#cfd86f]">
               <Link href="/jobs">
                 <i className="fas fa-plus mr-2"></i>
                 View All Positions
@@ -124,7 +124,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">Our Locations</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gro-blue-green mb-4">Our Locations</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Discover opportunities across Queensland's vibrant regional communities, each offering unique lifestyle benefits and career growth potential.
             </p>

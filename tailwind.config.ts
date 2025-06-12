@@ -68,6 +68,9 @@ export default {
         "charcoal": "hsl(210, 20%, 25%)",
         "soft-gray": "hsl(210, 10%, 60%)",
         "light-gray": "hsl(210, 15%, 95%)",
+        "gro-blue-green": "#a2bab0",
+        "gro-coral": "#d99d8f", 
+        "gro-lime": "#cfd86f",
         // Legacy color variables for backward compatibility
         teal: "var(--sky-blue)",
         coral: "var(--warm-peach)",

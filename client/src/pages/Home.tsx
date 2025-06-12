@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-neutral-light">
+      <section className="py-20 bg-light-gray/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
@@ -321,19 +321,19 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-white hover:bg-gray-100 text-primary">
+              <Button asChild size="lg" className="bg-white hover:bg-gray-50 text-sky-blue border border-sky-blue/20">
                 <Link href="/jobs">
                   <i className="fas fa-search mr-2"></i>
                   Browse Jobs
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90">
+              <Button asChild size="lg" className="bg-warm-peach hover:bg-warm-peach/90 text-charcoal">
                 <Link href="/jobs">
                   <i className="fas fa-paper-plane mr-2"></i>
                   Apply Now
                 </Link>
               </Button>
-              <Button asChild size="lg" className="bg-coral hover:bg-coral/90 text-white">
+              <Button asChild size="lg" className="bg-light-peach hover:bg-light-peach/90 text-charcoal">
                 <Link href="/relocation">
                   <i className="fas fa-truck mr-2"></i>
                   Relocation Support

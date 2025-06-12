@@ -13,23 +13,23 @@
   --card-foreground: hsl(210, 12%, 20%);
   --border: hsl(220, 20%, 90%);
   --input: hsl(220, 20%, 90%);
-  --primary: #bcd7d0;
-  --primary-foreground: #7356ff;
+  --primary: #80cae5;
+  --primary-foreground: hsl(0, 0%, 100%);
   --secondary: #e7cab7;
-  --secondary-foreground: #7356ff;
-  --accent: #cfd86f;
-  --accent-foreground: #7356ff;
-  --destructive: hsl(0, 84%, 60%);
+  --secondary-foreground: hsl(210, 20%, 25%);
+  --accent: #f4d1ae;
+  --accent-foreground: hsl(210, 20%, 25%);
+  --destructive: hsl(0, 72%, 51%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: #bcd7d0;
+  --ring: #80cae5;
   --radius: 0.75rem;
-  --neutral-light: hsl(40, 20%, 97%);
-  --text-dark: #7356ff;
-  --warm-cream: hsl(40, 30%, 98%);
-  --teal: #bcd7d0;
-  --coral: #e7cab7;
-  --green: #cfd86f;
-  --dark-gray: #7356ff;
+  --neutral-light: hsl(35, 25%, 97%);
+  --text-dark: hsl(210, 20%, 25%);
+  --warm-cream: hsl(35, 30%, 98%);
+  --sky-blue: #80cae5;
+  --warm-peach: #e7cab7;
+  --light-peach: #f4d1ae;
+  --charcoal: hsl(210, 20%, 25%);
 }
 
 .dark {

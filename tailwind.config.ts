@@ -61,16 +61,18 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
-        // GRO Early Learning brand colors from official brand guide
-        "gro-teal": "#bcd7d0",
-        "gro-coral": "#e7cab7", 
-        "gro-green": "#cfd86f",
-        "gro-navy": "#7356ff",
-        // Legacy color variables
-        teal: "var(--teal)",
-        coral: "var(--coral)",
-        green: "var(--green)",
-        "dark-gray": "var(--dark-gray)",
+        // Updated design system with improved consistency
+        "sky-blue": "#80cae5",
+        "warm-peach": "#e7cab7",
+        "light-peach": "#f4d1ae",
+        "charcoal": "hsl(210, 20%, 25%)",
+        "soft-gray": "hsl(210, 10%, 60%)",
+        "light-gray": "hsl(210, 15%, 95%)",
+        // Legacy color variables for backward compatibility
+        teal: "var(--sky-blue)",
+        coral: "var(--warm-peach)",
+        green: "var(--light-peach)",
+        "dark-gray": "var(--charcoal)",
       },
       keyframes: {
         "accordion-down": {

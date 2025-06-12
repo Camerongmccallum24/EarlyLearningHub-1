@@ -23,17 +23,17 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-soft sticky top-0 z-50 border-b border-orange-100">
+    <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-light-gray">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
             <div className="flex items-baseline">
-              <span className="text-4xl font-bold text-gro-teal">g</span>
-              <span className="text-4xl font-bold text-gro-coral">r</span>
-              <span className="text-4xl font-bold text-gro-green">o</span>
+              <span className="text-4xl font-bold text-sky-blue">g</span>
+              <span className="text-4xl font-bold text-warm-peach">r</span>
+              <span className="text-4xl font-bold text-light-peach">o</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gro-navy uppercase tracking-wide">EARLY LEARNING</h1>
+              <h1 className="text-xl font-bold text-charcoal uppercase tracking-wide">EARLY LEARNING</h1>
             </div>
           </Link>
           

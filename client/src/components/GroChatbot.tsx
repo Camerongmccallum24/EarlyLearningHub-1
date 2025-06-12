@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Briefcase, Send, User, Bot, Users, HelpCircle, RefreshCw, Copy, CheckCircle } from 'lucide-react';
+import { useMutation } from '@tanstack/react-query';
+import { apiRequest } from '@/lib/queryClient';
 
 const GroChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +24,17 @@ const GroChatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [copiedMessageId, setCopiedMessageId] = useState(null);
   const messagesEndRef = useRef(null);
+
+  // AI Chat mutation
+  const chatMutation = useMutation({
+    mutationFn: async ({ messages, context }: { messages: any[], context: string }) => {
+      const response = await apiRequest('/api/chat', {
+        method: 'POST',
+        body: { messages, context }
+      });
+      return response;
+    }
+  });
 
   const tabs = [
     { id: 'general', label: 'General', icon: MessageCircle, color: 'bg-blue-500' },
@@ -137,7 +150,7 @@ const GroChatbot = () => {
     return fallbackResponses[tab] || fallbackResponses.general;
   };
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
     const newUserMessage = {
@@ -156,12 +169,30 @@ const GroChatbot = () => {
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate bot response delay
-    setTimeout(() => {
+    try {
+      // Convert messages to format expected by OpenAI
+      const conversationHistory = messages[activeTab as keyof typeof messages]
+        .slice(-10) // Keep last 10 messages for context
+        .map(msg => ({
+          role: msg.type === 'user' ? 'user' : 'assistant',
+          content: msg.content
+        }));
+      
+      // Add the new user message
+      conversationHistory.push({
+        role: 'user',
+        content: currentInput
+      });
+
+      const result = await chatMutation.mutateAsync({
+        messages: conversationHistory,
+        context: activeTab
+      });
+
       const botResponse = {
         id: Date.now() + 1,
         type: 'bot',
-        content: generateBotResponse(currentInput, activeTab),
+        content: result.response,
         timestamp: new Date()
       };
 
@@ -169,8 +200,22 @@ const GroChatbot = () => {
         ...prev,
         [activeTab]: [...prev[activeTab], botResponse]
       }));
+    } catch (error) {
+      console.error('Chat error:', error);
+      const errorResponse = {
+        id: Date.now() + 1,
+        type: 'bot',
+        content: 'I apologize, but I\'m having trouble connecting right now. Please try again in a moment.',
+        timestamp: new Date()
+      };
+
+      setMessages(prev => ({
+        ...prev,
+        [activeTab]: [...prev[activeTab], errorResponse]
+      }));
+    } finally {
       setIsTyping(false);
-    }, 1000 + Math.random() * 1000);
+    }
   };
 
   const handleQuickResponse = (response) => {
@@ -255,7 +300,7 @@ const GroChatbot = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">GRO Careers</h3>
-                <p className="text-xs text-blue-100">Ask me anything!</p>
+                <p className="text-xs text-blue-100">AI Assistant • Ask me anything!</p>
               </div>
             </div>
             <div className="flex items-center gap-2">

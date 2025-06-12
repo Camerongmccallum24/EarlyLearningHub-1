@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertJobApplicationSchema } from "@shared/schema";
+import { generateChatResponse, type ChatMessage } from "./openai";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -71,6 +72,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(applications);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch applications" });
+    }
+  });
+
+  // Chat with AI assistant
+  app.post("/api/chat", async (req, res) => {
+    try {
+      const { messages, context } = req.body;
+      
+      if (!messages || !Array.isArray(messages)) {
+        return res.status(400).json({ message: "Messages array is required" });
+      }
+
+      const response = await generateChatResponse(messages, context);
+      res.json({ response });
+    } catch (error) {
+      console.error("Chat API error:", error);
+      res.status(500).json({ message: "Failed to generate chat response" });
     }
   });
 

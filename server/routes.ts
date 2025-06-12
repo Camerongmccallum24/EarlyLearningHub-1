@@ -11,9 +11,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       // Try ATS API first
       try {
-        const atsResponse = await fetch("https://ats.regionalchildcare.com/api/external/jobs", {
-          timeout: 5000
-        });
+        const atsResponse = await fetch("https://ats.regionalchildcare.com/api/external/jobs");
         
         if (atsResponse.ok) {
           const atsData = await atsResponse.json();
@@ -65,7 +63,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           }
         }
       } catch (atsError) {
-        console.warn("ATS API unavailable, falling back to local data:", atsError.message);
+        console.warn("ATS API unavailable, falling back to local data:", (atsError as Error).message);
       }
       
       // Fallback to local storage
@@ -98,9 +96,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       
       // Try ATS API first
       try {
-        const atsResponse = await fetch("https://ats.regionalchildcare.com/api/external/jobs", {
-          timeout: 5000
-        });
+        const atsResponse = await fetch("https://ats.regionalchildcare.com/api/external/jobs");
         
         if (atsResponse.ok) {
           const atsData = await atsResponse.json();
@@ -151,51 +147,63 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Submit job application to ATS
+  // Submit job application to ATS with fallback to local storage
   app.post("/api/applications", async (req, res) => {
     try {
-      // Validate the incoming data structure
-      const applicationData = {
-        jobId: req.body.jobId,
-        candidateName: req.body.fullName,
-        candidateEmail: req.body.email,
-        phone: req.body.phone,
-        resumeText: req.body.resumeUrl || req.body.resume,
-        coverLetter: req.body.coverLetter
-      };
-
-      // Submit to ATS API
-      const atsResponse = await fetch("https://ats.regionalchildcare.com/api/applications", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(applicationData)
-      });
-
-      if (!atsResponse.ok) {
-        const errorData = await atsResponse.json().catch(() => ({}));
-        throw new Error(`ATS API returned ${atsResponse.status}: ${errorData.message || 'Unknown error'}`);
-      }
-
-      const atsResult = await atsResponse.json();
-      
-      // Also store locally for tracking (optional)
+      // Try ATS API first
       try {
-        const validatedData = insertJobApplicationSchema.parse(req.body);
-        await storage.createJobApplication(validatedData);
-      } catch (localError) {
-        console.warn("Failed to store application locally:", localError);
-        // Don't fail the request if local storage fails
+        const applicationData = {
+          jobId: req.body.jobId,
+          candidateName: req.body.fullName,
+          candidateEmail: req.body.email,
+          phone: req.body.phone,
+          resumeText: req.body.resumeUrl || req.body.resume,
+          coverLetter: req.body.coverLetter
+        };
+
+        const atsResponse = await fetch("https://ats.regionalchildcare.com/api/applications", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(applicationData)
+        });
+
+        if (atsResponse.ok) {
+          const atsResult = await atsResponse.json();
+          console.log("✅ Successfully submitted application to ATS");
+          
+          // Also store locally for tracking
+          try {
+            const validatedData = insertJobApplicationSchema.parse(req.body);
+            await storage.createJobApplication(validatedData);
+          } catch (localError) {
+            console.warn("Failed to store application locally:", (localError as Error).message);
+          }
+          
+          return res.status(201).json({ 
+            message: "Application submitted successfully to ATS",
+            atsResponse: atsResult,
+            success: true
+          });
+        }
+      } catch (atsError) {
+        console.warn("ATS API unavailable for application submission, using local storage:", (atsError as Error).message);
       }
+      
+      // Fallback to local storage only
+      console.log("📦 Storing application locally as fallback");
+      const validatedData = insertJobApplicationSchema.parse(req.body);
+      const application = await storage.createJobApplication(validatedData);
       
       res.status(201).json({ 
-        message: "Application submitted successfully to ATS",
-        atsResponse: atsResult,
+        message: "Application submitted successfully (stored locally)",
+        applicationId: application.id,
         success: true
       });
+      
     } catch (error) {
-      console.error("Failed to submit application to ATS:", error);
+      console.error("Failed to submit application:", error);
       
       if (error instanceof z.ZodError) {
         return res.status(400).json({ 
@@ -205,8 +213,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       
       res.status(500).json({ 
-        message: "Failed to submit application to ATS",
-        error: error.message 
+        message: "Failed to submit application",
+        error: (error as Error).message 
       });
     }
   });

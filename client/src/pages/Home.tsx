@@ -22,7 +22,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="animate-fade-in-up text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-gro-dark-blue mb-4 sm:mb-6 leading-tight hover:text-gro-teal transition-colors duration-500">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight hover:text-gro-teal transition-colors duration-500 text-[#60A5FA]">
                 Join Our <span className="text-gro-dark-blue hover:text-gro-teal transition-colors duration-300">GRO Early Learning</span> Team
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed animate-slide-in-right">
@@ -80,7 +80,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Featured Jobs Section */}
       <section className="py-16 sm:py-20 bg-gro-blue-green/5">
         <div className="container mx-auto px-4">
@@ -119,7 +118,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Locations Section */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -170,7 +168,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* About Section */}
       <section className="py-20 bg-neutral-light">
         <div className="container mx-auto px-4">
@@ -236,7 +233,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* Testimonials Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -274,7 +270,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* FAQ Section */}
       <section className="py-20 bg-light-gray/30">
         <div className="container mx-auto px-4">
@@ -309,7 +304,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-primary/80">
         <div className="container mx-auto px-4 text-center">

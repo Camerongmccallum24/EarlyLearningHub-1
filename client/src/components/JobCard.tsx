@@ -41,26 +41,26 @@ export default function JobCard({ job }: JobCardProps) {
   };
 
   return (
-    <div className="bg-white rounded-playful shadow-card hover:shadow-soft transition-all p-4 sm:p-6 lg:p-8 border border-light-gray/30 hover-lift animate-fade-in-up">
-      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 space-y-3 sm:space-y-0">
+    <div className="bg-white rounded-playful shadow-card hover:shadow-soft transition-all p-4 sm:p-6 border border-light-gray/30 hover-lift animate-fade-in-up touch-card">
+      <div className="flex flex-col gap-3 mb-4">
         <div className="flex-1">
-          <h3 className="text-lg sm:text-xl font-semibold text-gro-dark-blue mb-2 hover:text-gro-teal transition-colors duration-300 leading-tight">{job.title}</h3>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 text-sm text-gray-600">
-            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">
+          <h3 className="text-lg sm:text-xl font-semibold text-gro-dark-blue mb-3 hover:text-gro-teal transition-colors duration-300 leading-tight">{job.title}</h3>
+          <div className="flex flex-wrap gap-3 mb-3 text-sm text-gray-600">
+            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 min-h-[24px]">
               <i className="fas fa-map-marker-alt text-gro-blue-green mr-2 hover-scale"></i>
               <span>{job.location}</span>
             </span>
-            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">
+            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 min-h-[24px]">
               <i className="fas fa-clock text-gro-lime mr-2 hover-scale"></i>
               <span>{job.type}</span>
             </span>
-            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">
+            <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200 min-h-[24px]">
               <i className={`fas fa-tag mr-2 hover-scale ${getDepartmentColor(job.department)}`}></i>
               <span>{job.department}</span>
             </span>
           </div>
         </div>
-        <Badge className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent rounded-playful self-start sm:self-auto bg-[#cfd86fe6] text-[#374151]">
+        <Badge className="inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-semibold focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent rounded-playful self-start bg-[#cfd86fe6] text-[#374151]">
           {job.salary}
         </Badge>
       </div>

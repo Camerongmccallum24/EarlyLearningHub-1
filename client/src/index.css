@@ -42,6 +42,13 @@
   --zesty-lime-yellow: #CED34D;
   --dusty-mint-green: #ACC6BF;
   --body-text: #5A5B5B;
+  
+  /* Touch-friendly sizing */
+  --touch-target-min: 44px;
+  --mobile-padding: 1rem;
+  --mobile-margin: 0.75rem;
+  --mobile-text-base: 16px;
+  --mobile-heading-scale: 1.25;
 }
 
 .dark {
@@ -77,6 +84,64 @@
     font-family: 'Inter', system-ui, sans-serif;
     color: var(--body-text);
   }
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 768px) {
+  .mobile-stack {
+    @apply flex-col space-y-4 space-x-0;
+  }
+  
+  .mobile-full-width {
+    @apply w-full;
+  }
+  
+  .mobile-center {
+    @apply text-center;
+  }
+  
+  .mobile-padding {
+    @apply px-4 py-6;
+  }
+  
+  .mobile-text-scale {
+    @apply text-sm;
+  }
+  
+  .mobile-heading-scale {
+    @apply text-xl;
+  }
+}
+
+/* Touch-friendly interactive elements */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  @apply flex items-center justify-center;
+}
+
+.touch-button {
+  @apply touch-target px-6 py-3 rounded-xl transition-all duration-200;
+  @apply active:scale-95 active:bg-opacity-80;
+}
+
+.touch-card {
+  @apply transition-all duration-200 active:scale-[0.98] active:shadow-sm;
+}
+
+/* Mobile navigation improvements */
+.mobile-nav {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50;
+  @apply flex justify-around items-center py-2 px-4;
+}
+
+.mobile-nav-item {
+  @apply touch-target flex-col text-xs text-gray-600;
+  color: #6b7280;
+}
+
+.mobile-nav-item:hover {
+  color: #3B82F6;
 }
 
 /* Custom utility classes for childcare design */

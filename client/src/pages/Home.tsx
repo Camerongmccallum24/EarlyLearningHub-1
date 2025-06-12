@@ -284,7 +284,7 @@ export default function Home() {
             <Accordion type="single" collapsible className="space-y-4">
               {faqItems.slice(0, 5).map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-xl shadow-sm px-6">
-                  <AccordionTrigger className="text-left text-lg font-semibold text-primary hover:no-underline">
+                  <AccordionTrigger className="flex flex-1 items-center justify-between py-4 transition-all [&[data-state=open]>svg]:rotate-180 text-left text-lg font-semibold hover:no-underline text-[#a2bab0]">
                     {item.q}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-600 leading-relaxed">

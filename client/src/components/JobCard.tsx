@@ -69,8 +69,8 @@ export default function JobCard({ job }: JobCardProps) {
       
       <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
         {job.requirements.slice(0, 3).map((req, index) => (
-          <Badge key={index} variant="outline" className="text-xs hover-scale transition-transform duration-200 hover:bg-gro-blue-green/20 hover:border-gro-blue-green">
-            {req}
+          <Badge key={index} variant="outline" className="text-xs hover-scale transition-transform duration-200 hover:bg-gro-blue-green/20 hover:border-gro-blue-green max-w-[200px] truncate" title={req}>
+            {req.length > 25 ? `${req.substring(0, 25)}...` : req}
           </Badge>
         ))}
         {job.requirements.length > 3 && (

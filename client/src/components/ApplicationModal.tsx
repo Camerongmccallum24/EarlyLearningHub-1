@@ -6,6 +6,7 @@ import { z } from "zod";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
@@ -103,6 +104,12 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle, jobLocatio
           <DialogTitle className="text-2xl font-bold text-primary">
             Apply for Position
           </DialogTitle>
+          <DialogDescription>
+            {jobTitle && jobLocation 
+              ? `Submit your application for ${jobTitle} in ${jobLocation}. Complete the form below and we'll review your application within 5 business days.`
+              : "Submit your application for this position. Complete the form below and we'll review your application within 5 business days."
+            }
+          </DialogDescription>
         </DialogHeader>
         
         <Form {...form}>

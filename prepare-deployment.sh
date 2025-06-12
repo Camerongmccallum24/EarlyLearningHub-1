@@ -5,11 +5,8 @@
 
 echo "🚀 Preparing GRO Early Learning Career Website for DigitalOcean deployment..."
 
-# Remove Replit-specific files if they exist
-echo "📁 Cleaning Replit-specific files..."
-rm -f .replit
-rm -f replit.nix
-rm -rf attached_assets/ 2>/dev/null || true
+# Note: Replit-specific files will be excluded via .gitignore and .doignore
+echo "📁 Replit-specific files configured for exclusion..."
 
 # Clean build artifacts
 echo "🧹 Cleaning build artifacts..."

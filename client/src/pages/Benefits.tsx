@@ -123,7 +123,7 @@ export default function Benefits() {
               to the ongoing professional development opportunities, I feel truly supported in my career growth."
             </blockquote>
             <cite className="text-gro-dark-blue font-bold text-lg">Sarah Johnson</cite>
-            <div className="text-gro-coral font-medium">Lead Educator • Mount Isa Centre</div>
+            <div className="text-gro-blue-green font-medium">Lead Educator • Mount Isa Centre</div>
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@ export default function Benefits() {
             
             <div className="bg-white p-8 rounded-2xl shadow-lg hover-lift group">
               <div className="w-16 h-16 bg-gro-coral/20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-all duration-300">
-                <i className="fas fa-university text-gro-coral text-2xl hover-rotate"></i>
+                <i className="fas fa-university text-gro-blue-green text-2xl hover-rotate"></i>
               </div>
               <h3 className="text-xl font-bold text-gro-dark-blue mb-4 font-display">University Partnerships</h3>
               <p className="text-gray-700 leading-relaxed">25% tuition discount with CQU and USQ plus paid study time for teaching degrees</p>
@@ -201,7 +201,7 @@ export default function Benefits() {
                       </div>
                       
                       <div className="bg-white/70 p-4 rounded-xl">
-                        <h5 className="font-bold text-gro-coral mb-2">Career Progression:</h5>
+                        <h5 className="font-bold text-gro-dark-blue mb-2">Career Progression:</h5>
                         <p className="text-sm text-gray-700 leading-relaxed">{step.progression_notes}</p>
                       </div>
                     </div>
@@ -228,7 +228,7 @@ export default function Benefits() {
                 View Current Opportunities
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-gro-coral text-gro-coral hover:bg-gro-coral hover:text-white font-semibold px-8 py-4 text-lg">
+            <Button asChild variant="outline" size="lg" className="border-gro-blue-green text-gro-blue-green hover:bg-gro-blue-green hover:text-white font-semibold px-8 py-4 text-lg">
               <Link href="/relocation">
                 <i className="fas fa-truck mr-2"></i>
                 Relocation Support

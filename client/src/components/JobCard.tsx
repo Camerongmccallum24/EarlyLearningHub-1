@@ -43,7 +43,7 @@ export default function JobCard({ job }: JobCardProps) {
           <h3 className="text-lg sm:text-xl font-semibold text-gro-dark-blue mb-2 hover:text-gro-teal transition-colors duration-300 leading-tight">{job.title}</h3>
           <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-1 sm:space-y-0 text-sm text-gray-600">
             <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">
-              <i className="fas fa-map-marker-alt text-gro-coral mr-2 hover-scale"></i>
+              <i className="fas fa-map-marker-alt text-gro-blue-green mr-2 hover-scale"></i>
               <span>{job.location}</span>
             </span>
             <span className="flex items-center hover:text-gro-dark-blue transition-colors duration-200">

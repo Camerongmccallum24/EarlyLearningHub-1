@@ -439,7 +439,7 @@ const GroChatbot = () => {
               <button
                 onClick={handleSendMessage}
                 disabled={!inputValue.trim()}
-                className="bg-gro-coral hover:bg-gro-coral/90 disabled:bg-gray-300 text-white p-2.5 rounded-lg transition-all duration-200"
+                className="bg-gro-blue-green hover:bg-gro-blue-green/90 disabled:bg-gray-300 text-white p-2.5 rounded-lg transition-all duration-200"
                 aria-label="Send message"
               >
                 <Send size={16} />

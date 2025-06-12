@@ -32,8 +32,10 @@ export const jobs = pgTable("jobs", {
   description: text("description").notNull(),
   requirements: text("requirements").array().notNull(),
   responsibilities: text("responsibilities").array().notNull(),
+  benefits: text("benefits").array().notNull().default([]),
   isActive: boolean("is_active").default(true).notNull(),
   postedDate: timestamp("posted_date").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({

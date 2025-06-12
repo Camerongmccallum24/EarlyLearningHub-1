@@ -1,37 +1,121 @@
-## Running the Project with Docker
+# GRO Early Learning Career Website
 
-This project provides Dockerfiles for both the client and server applications, and a Docker Compose configuration to orchestrate them. Below are the project-specific instructions and requirements for running the project using Docker.
+A comprehensive early childhood education career platform connecting talented professionals with regional childcare opportunities.
 
-### Project-Specific Requirements
-- **Node.js Version:** Both client and server Dockerfiles use `node:22.13.1-slim`. This version is required for building and running the containers.
-- **Build Tools:** The server Dockerfile installs `python3` and `build-essential` for native dependencies during build.
+## Features
 
-### Environment Variables
-- No required environment variables are specified in the Dockerfiles or the provided compose file. If you need to use environment variables, uncomment the `env_file` lines in the `docker-compose.yml` and provide the appropriate `.env` files in `./client` and/or `./server`.
+- **Job Search & Application**: Browse and apply for early childhood education positions
+- **Interactive Location Maps**: Explore GRO Early Learning center locations
+- **AI-Powered Career Assistant**: Get personalized career guidance using OpenAI integration
+- **Mobile-Responsive Design**: Optimized for all devices with touch-friendly interfaces
+- **Real-time Job Updates**: Connect with external ATS systems for live job data
 
-### Build and Run Instructions
-1. **Ensure Docker and Docker Compose are installed on your system.**
-2. **Build and start the services:**
-   \```sh
-   docker compose up --build
-   \```
-   This will build and start both the client and server containers.
+## Technology Stack
 
-### Special Configuration
-- **Dockerfile Locations:**
-  - The client and server Dockerfiles are referenced as `../clientDockerfile` and `../serverDockerfile` in the compose file. Make sure these Dockerfiles are present at the correct relative paths from the build contexts (`./client` and `./server`).
-- **User Permissions:** Both containers run as non-root users for improved security.
-- **Dependencies:** The server build installs additional build tools for native dependencies, which may increase build time.
+- **Frontend**: React.js with TypeScript, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: PostgreSQL with Drizzle ORM
+- **AI Integration**: OpenAI GPT-4o for career insights
+- **Deployment**: Optimized for DigitalOcean App Platform
 
-### Exposed Ports
-- **Client (`typescript-client`):**
-  - Exposes port `4173` inside the container, mapped to `5173` on the host. Access the client at [http://localhost:5173](http://localhost:5173).
-- **Server (`typescript-server`):**
-  - Exposes port `5000` inside the container, mapped to `5000` on the host. Access the server at [http://localhost:5000](http://localhost:5000).
+## Quick Start
 
-### Service Dependencies
-- The client service depends on the server service and will wait for it to be available before starting.
+### Local Development
 
----
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd gro-early-learning-careers
+   ```
 
-For any additional configuration (such as environment variables or external services), update the `docker-compose.yml` and provide the necessary `.env` files as needed.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your database and API credentials
+   ```
+
+4. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+### DigitalOcean App Platform Deployment
+
+1. **Prepare for deployment**
+   ```bash
+   ./prepare-deployment.sh
+   ```
+
+2. **Push to GitHub**
+   ```bash
+   git add .
+   git commit -m "Prepare for DigitalOcean deployment"
+   git push origin main
+   ```
+
+3. **Deploy to DigitalOcean**
+   - Create new App Platform application
+   - Connect to your GitHub repository
+   - Configure environment variables from `.env.example`
+   - Add managed PostgreSQL database
+   - Deploy and verify
+
+See `DIGITALOCEAN_DEPLOYMENT.md` for detailed deployment instructions.
+
+## Environment Variables
+
+Required environment variables for production:
+
+- `DATABASE_URL` - PostgreSQL connection string
+- `OPENAI_API_KEY` - OpenAI API key for career assistant
+- `SESSION_SECRET` - Secure session secret
+- `NODE_ENV` - Set to "production"
+- `PORT` - Application port (default: 8080)
+
+## API Endpoints
+
+- `GET /health` - Health check endpoint
+- `GET /api/jobs` - List all active jobs
+- `POST /api/applications` - Submit job application
+- `POST /api/chat` - AI career assistant chat
+- `GET /api/webhooks/jobs` - External job data webhook
+
+## Database Schema
+
+The application uses PostgreSQL with the following main tables:
+
+- `users` - User authentication and profiles
+- `jobs` - Job listings and details
+- `job_applications` - Application submissions
+
+Database migrations are managed through Drizzle ORM.
+
+## Development Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run db:push` - Push database schema changes
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Support
+
+For deployment issues or technical support, refer to:
+- `DIGITALOCEAN_DEPLOYMENT.md` - Deployment guide
+- `DOCKER_DEPLOYMENT.md` - Docker containerization guide

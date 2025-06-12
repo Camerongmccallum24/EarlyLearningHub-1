@@ -2,8 +2,6 @@
 # These files and directories will be excluded from deployment
 
 # Development files
-.git/
-.gitignore
 .env*
 .vscode/
 .idea/
@@ -38,10 +36,7 @@ coverage/
 ehthumbs.db
 Thumbs.db
 
-# Documentation
-*.md
-docs/
-
-# Replit specific
+# Replit specific files to exclude from DigitalOcean deployment
 .replit
 replit.nix
+attached_assets/

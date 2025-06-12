@@ -29,7 +29,7 @@ export const jobs = pgTable("jobs", {
   location: text("location").notNull(),
   type: text("type").notNull(),
   department: text("department").notNull(),
-  salary: text("salary_range").notNull(),
+  salary: text("salary").notNull(),
   overview: text("overview"),
   description: text("description").notNull(),
   requirements: text("requirements").array().notNull(),
@@ -37,7 +37,7 @@ export const jobs = pgTable("jobs", {
   benefits: text("benefits").array(),
   status: text("status").default("active").notNull(),
   postedAt: timestamp("posted_at").defaultNow().notNull(),
-  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({

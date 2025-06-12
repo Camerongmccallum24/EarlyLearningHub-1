@@ -271,7 +271,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getJobsUpdatedSince(timestamp: Date): Promise<Job[]> {
-    return await db.select().from(jobs).where(gte(jobs.updatedAt, timestamp));
+    return await db.select().from(jobs).where(gte(jobs.createdAt, timestamp));
   }
 }
 

@@ -56,7 +56,7 @@ export default function JobCard({ job }: JobCardProps) {
             </span>
           </div>
         </div>
-        <Badge variant="secondary" className="rounded-playful self-start sm:self-auto text-[#374151]">
+        <Badge variant="secondary" className="rounded-playful self-start sm:self-auto bg-[#ffffff] text-[#3B82F6]">
           {job.salary}
         </Badge>
       </div>

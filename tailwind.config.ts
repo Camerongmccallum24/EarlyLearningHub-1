@@ -61,7 +61,12 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
-        // GRO Early Learning brand colors
+        // GRO Early Learning brand colors from official brand guide
+        "gro-teal": "#bcd7d0",
+        "gro-coral": "#e7cab7", 
+        "gro-green": "#cfd86f",
+        "gro-navy": "#7356ff",
+        // Legacy color variables
         teal: "var(--teal)",
         coral: "var(--coral)",
         green: "var(--green)",

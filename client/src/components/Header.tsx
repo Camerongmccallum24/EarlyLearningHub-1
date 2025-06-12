@@ -27,12 +27,13 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-warm-orange rounded-playful flex items-center justify-center shadow-card">
-              <span className="text-white text-2xl font-bold">G</span>
+            <div className="flex items-baseline">
+              <span className="text-4xl font-bold text-gro-teal">g</span>
+              <span className="text-4xl font-bold text-gro-coral">r</span>
+              <span className="text-4xl font-bold text-gro-green">o</span>
             </div>
             <div>
-              <h1 className="text-xl font-bold text-sky-blue">GRO Early Learning</h1>
-              <p className="text-sm text-warm-orange font-medium">Building Bright Futures</p>
+              <h1 className="text-xl font-bold text-gro-navy uppercase tracking-wide">EARLY LEARNING</h1>
             </div>
           </Link>
           

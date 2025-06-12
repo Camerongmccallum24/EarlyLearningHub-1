@@ -142,7 +142,7 @@ export default function RelocationSupport() {
           <TabsContent value="calculator" className="space-y-8">
             <Card>
               <CardHeader>
-                <CardTitle className="text-gro-coral">Interactive Relocation Cost Calculator</CardTitle>
+                <CardTitle className="text-gro-dark-blue">Interactive Relocation Cost Calculator</CardTitle>
                 <CardDescription>
                   Get a personalized estimate of your moving costs with GRO's relocation benefits included.
                 </CardDescription>

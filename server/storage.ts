@@ -62,7 +62,7 @@ export class MemStorage implements IStorage {
           "Help maintain clean, organized classroom settings",
           "Build positive relationships with children, families, and colleagues"
         ],
-        isActive: true
+        status: "active"
       },
       {
         title: "Lead Educator",
@@ -79,7 +79,7 @@ export class MemStorage implements IStorage {
           "Mentor and guide Assistant Educators",
           "Maintain communication with families about child progress"
         ],
-        isActive: true
+        status: "active"
       },
       {
         title: "Centre Director",
@@ -96,7 +96,7 @@ export class MemStorage implements IStorage {
           "Ensure regulatory compliance and quality standards",
           "Foster relationships with families and community"
         ],
-        isActive: true
+        status: "active"
       },
       {
         title: "Kitchen Assistant",
@@ -113,7 +113,7 @@ export class MemStorage implements IStorage {
           "Assist with menu planning and inventory",
           "Follow dietary requirements and restrictions"
         ],
-        isActive: true
+        status: "active"
       }
     ];
 
@@ -162,21 +162,22 @@ export class MemStorage implements IStorage {
   }
 
   async getJobs(): Promise<Job[]> {
-    return Array.from(this.jobs.values()).filter(job => job.isActive);
+    return Array.from(this.jobs.values()).filter(job => job.status === 'active');
   }
 
   async getJob(id: number): Promise<Job | undefined> {
     const job = this.jobs.get(id);
-    return job?.isActive ? job : undefined;
+    return job?.status === 'active' ? job : undefined;
   }
 
   async createJob(insertJob: InsertJob): Promise<Job> {
     const id = this.currentJobId++;
     const job: Job = { 
       ...insertJob,
-      isActive: insertJob.isActive ?? true,
       id,
-      postedDate: new Date()
+      status: insertJob.status || "active",
+      createdAt: new Date(),
+      postedAt: insertJob.postedAt || new Date()
     };
     this.jobs.set(id, job);
     return job;
@@ -184,19 +185,29 @@ export class MemStorage implements IStorage {
 
   async getJobsByLocation(location: string): Promise<Job[]> {
     return Array.from(this.jobs.values()).filter(job => 
-      job.isActive && job.location.toLowerCase() === location.toLowerCase()
+      job.status === 'active' && job.location.toLowerCase() === location.toLowerCase()
     );
   }
 
   async getJobsByDepartment(department: string): Promise<Job[]> {
     return Array.from(this.jobs.values()).filter(job => 
-      job.isActive && job.department.toLowerCase() === department.toLowerCase()
+      job.status === 'active' && job.department.toLowerCase() === department.toLowerCase()
     );
   }
 
   async getJobsByType(type: string): Promise<Job[]> {
     return Array.from(this.jobs.values()).filter(job => 
-      job.isActive && job.type.toLowerCase() === type.toLowerCase()
+      job.status === 'active' && job.type.toLowerCase() === type.toLowerCase()
+    );
+  }
+
+  async getActiveJobs(): Promise<Job[]> {
+    return Array.from(this.jobs.values()).filter(job => job.status === 'active');
+  }
+
+  async getJobsUpdatedSince(timestamp: Date): Promise<Job[]> {
+    return Array.from(this.jobs.values()).filter(job => 
+      job.status === 'active' && job.createdAt > timestamp
     );
   }
 }

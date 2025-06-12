@@ -6,6 +6,116 @@ import { generateChatResponse, type ChatMessage } from "./openai";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Webhook endpoint: Get all active jobs for external career sites
+  app.get("/api/webhooks/jobs", async (req, res) => {
+    try {
+      const activeJobs = await storage.getActiveJobs();
+      
+      const formattedJobs = activeJobs.map(job => ({
+        id: job.id,
+        title: job.title,
+        department: job.department.toLowerCase(),
+        location: job.location,
+        type: job.type,
+        salary: job.salary,
+        description: job.description,
+        requirements: job.requirements,
+        benefits: job.benefits || [],
+        status: "active",
+        createdAt: job.postedDate.toISOString(),
+        applyUrl: `https://ats.regionalchildcare.com/jobs/${job.id}/apply`,
+        directUrl: `https://ats.regionalchildcare.com/jobs/${job.id}`
+      }));
+
+      res.json({
+        timestamp: new Date().toISOString(),
+        event: "jobs.list",
+        data: formattedJobs
+      });
+    } catch (error) {
+      console.error("Webhook jobs error:", error);
+      res.status(500).json({ error: "Failed to fetch jobs" });
+    }
+  });
+
+  // Webhook endpoint: Get single job by ID
+  app.get("/api/webhooks/jobs/:id", async (req, res) => {
+    try {
+      const jobId = parseInt(req.params.id);
+      const job = await storage.getJob(jobId);
+      
+      if (!job || !job.isActive) {
+        return res.status(404).json({ error: "Job not found" });
+      }
+
+      const formattedJob = {
+        id: job.id,
+        title: job.title,
+        department: job.department.toLowerCase(),
+        location: job.location,
+        type: job.type,
+        salary: job.salary,
+        description: job.description,
+        requirements: job.requirements,
+        benefits: job.benefits || [],
+        status: "active",
+        createdAt: job.postedDate.toISOString(),
+        applyUrl: `https://ats.regionalchildcare.com/jobs/${job.id}/apply`,
+        directUrl: `https://ats.regionalchildcare.com/jobs/${job.id}`
+      };
+
+      res.json({
+        timestamp: new Date().toISOString(),
+        event: "job.get",
+        data: formattedJob
+      });
+    } catch (error) {
+      console.error("Webhook single job error:", error);
+      res.status(500).json({ error: "Failed to fetch job" });
+    }
+  });
+
+  // Webhook endpoint: Get jobs updated since timestamp
+  app.get("/api/webhooks/jobs/updated-since/:timestamp", async (req, res) => {
+    try {
+      const timestamp = new Date(req.params.timestamp);
+      
+      if (isNaN(timestamp.getTime())) {
+        return res.status(400).json({ error: "Invalid timestamp format" });
+      }
+
+      const updatedJobs = await storage.getJobsUpdatedSince(timestamp);
+      
+      const formattedJobs = updatedJobs
+        .filter(job => job.isActive)
+        .map(job => ({
+          id: job.id,
+          title: job.title,
+          department: job.department.toLowerCase(),
+          location: job.location,
+          type: job.type,
+          salary: job.salary,
+          description: job.description,
+          requirements: job.requirements,
+          benefits: job.benefits || [],
+          status: "active",
+          createdAt: job.postedDate.toISOString(),
+          applyUrl: `https://ats.regionalchildcare.com/jobs/${job.id}/apply`,
+          directUrl: `https://ats.regionalchildcare.com/jobs/${job.id}`
+        }));
+
+      res.json({
+        timestamp: new Date().toISOString(),
+        event: "jobs.updated",
+        since: req.params.timestamp,
+        data: formattedJobs
+      });
+    } catch (error) {
+      console.error("Webhook updated jobs error:", error);
+      res.status(500).json({ error: "Failed to fetch updated jobs" });
+    }
+  });
+
   // Get all jobs from ATS with fallback to local storage
   app.get("/api/jobs", async (req, res) => {
     try {

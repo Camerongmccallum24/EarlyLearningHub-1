@@ -1,4 +1,6 @@
 import { users, jobApplications, jobs, type User, type InsertUser, type JobApplication, type InsertJobApplication, type Job, type InsertJob } from "@shared/schema";
+import { db } from "./db";
+import { eq, gte } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -17,6 +19,10 @@ export interface IStorage {
   getJobsByLocation(location: string): Promise<Job[]>;
   getJobsByDepartment(department: string): Promise<Job[]>;
   getJobsByType(type: string): Promise<Job[]>;
+  
+  // Webhook endpoints
+  getActiveJobs(): Promise<Job[]>;
+  getJobsUpdatedSince(timestamp: Date): Promise<Job[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -195,4 +201,78 @@ export class MemStorage implements IStorage {
   }
 }
 
-export const storage = new MemStorage();
+export class DatabaseStorage implements IStorage {
+  async getUser(id: number): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
+  }
+
+  async getUserByUsername(username: string): Promise<User | undefined> {
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
+  }
+
+  async createUser(insertUser: InsertUser): Promise<User> {
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
+    return user;
+  }
+
+  async createJobApplication(insertApplication: InsertJobApplication): Promise<JobApplication> {
+    const [application] = await db
+      .insert(jobApplications)
+      .values(insertApplication)
+      .returning();
+    return application;
+  }
+
+  async getJobApplications(): Promise<JobApplication[]> {
+    return await db.select().from(jobApplications);
+  }
+
+  async getJobApplication(id: number): Promise<JobApplication | undefined> {
+    const [application] = await db.select().from(jobApplications).where(eq(jobApplications.id, id));
+    return application || undefined;
+  }
+
+  async getJobs(): Promise<Job[]> {
+    return await db.select().from(jobs);
+  }
+
+  async getJob(id: number): Promise<Job | undefined> {
+    const [job] = await db.select().from(jobs).where(eq(jobs.id, id));
+    return job || undefined;
+  }
+
+  async createJob(insertJob: InsertJob): Promise<Job> {
+    const [job] = await db
+      .insert(jobs)
+      .values(insertJob)
+      .returning();
+    return job;
+  }
+
+  async getJobsByLocation(location: string): Promise<Job[]> {
+    return await db.select().from(jobs).where(eq(jobs.location, location));
+  }
+
+  async getJobsByDepartment(department: string): Promise<Job[]> {
+    return await db.select().from(jobs).where(eq(jobs.department, department));
+  }
+
+  async getJobsByType(type: string): Promise<Job[]> {
+    return await db.select().from(jobs).where(eq(jobs.type, type));
+  }
+
+  async getActiveJobs(): Promise<Job[]> {
+    return await db.select().from(jobs).where(eq(jobs.isActive, true));
+  }
+
+  async getJobsUpdatedSince(timestamp: Date): Promise<Job[]> {
+    return await db.select().from(jobs).where(gte(jobs.updatedAt, timestamp));
+  }
+}
+
+export const storage = new DatabaseStorage();

@@ -23,7 +23,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="animate-fade-in-up text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight hover:text-gro-teal transition-colors duration-500 text-[#60A5FA]">
-                Join Our <span className="text-gro-dark-blue hover:text-gro-teal transition-colors duration-300">GRO Early Learning</span> Team
+                Join Our <span className="hover:text-gro-teal transition-colors duration-300 text-[#f79939]">GRO Early Learning</span> Team
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed animate-slide-in-right">
                 {heroContent.subtitle}

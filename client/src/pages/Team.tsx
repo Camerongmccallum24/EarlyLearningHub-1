@@ -16,7 +16,7 @@ export default function Team() {
 
         {/* Leadership Team */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Leadership Team</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#4682b4]">Leadership Team</h2>
           <div className="flex justify-center">
             <div className="max-w-md">
               <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
@@ -39,7 +39,7 @@ export default function Team() {
 
         {/* Centre Directors */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Centre Directors</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#4682b4]">Centre Directors</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-sm p-6 text-center hover:shadow-lg transition-shadow">
               <img 

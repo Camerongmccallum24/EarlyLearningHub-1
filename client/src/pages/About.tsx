@@ -54,7 +54,7 @@ export default function About() {
 
         {/* Our Values */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Our Values</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#4682b4]">Our Values</h2>
           <div className="grid lg:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
@@ -93,7 +93,7 @@ export default function About() {
 
         {/* Why Join GRO */}
         <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-12 mb-20">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Why Join Regional Childcare</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#4682b4]">Why Join Regional Childcare</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="flex items-start space-x-4">
               <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">

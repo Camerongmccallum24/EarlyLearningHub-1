@@ -132,7 +132,7 @@ export default function Benefits() {
       <div className="bg-gradient-to-br from-gro-blue-green/5 to-gro-lime/5 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gro-dark-blue mb-4 font-display">Professional Growth & Development</h2>
+            <h2 className="text-4xl font-bold mb-4 font-display text-[#4682b4]">Professional Growth & Development</h2>
             <div className="w-24 h-1 bg-gro-teal mx-auto rounded-full mb-8"></div>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               At GRO Early Learning, your career growth is our priority. We provide comprehensive support, 

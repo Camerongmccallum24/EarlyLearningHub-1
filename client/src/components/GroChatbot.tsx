@@ -269,10 +269,10 @@ const GroChatbot = () => {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="bg-gro-teal hover:bg-gro-teal/90 text-white rounded-full p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl animate-pulse-subtle animate-float button-press"
+          className="bg-gro-teal hover:bg-gro-teal/90 text-white rounded-full p-3 sm:p-4 shadow-lg ring-2 ring-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:shadow-xl animate-pulse-subtle animate-float button-press"
           aria-label="Open chat"
         >
-          <MessageCircle size={24} className="hover-scale transition-transform duration-200" />
+          <MessageCircle size={20} className="sm:w-6 sm:h-6 hover-scale transition-transform duration-200" />
         </button>
       )}
 
@@ -281,40 +281,41 @@ const GroChatbot = () => {
         <div
           className="
             bg-white rounded-playful shadow-soft 
-            w-[95vw] max-w-[400px] 
-            h-[70vh] max-h-[600px] 
+            w-[95vw] max-w-[380px] 
+            h-[70vh] max-h-[500px] 
             sm:w-96 sm:max-w-[420px] 
             sm:h-[600px] sm:max-h-[80vh]
-            flex flex-col border border-orange-100 overflow-hidden
+            flex flex-col border border-gro-coral/20 overflow-hidden
           "
-          style={{ minWidth: "300px", minHeight: "350px" }}
+          style={{ minWidth: "280px", minHeight: "320px" }}
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-teal to-coral text-white p-4 flex justify-between items-center">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-playful flex items-center justify-center shadow-card">
-                <span className="text-teal font-bold text-lg">G</span>
+          <div className="bg-gradient-to-r from-gro-teal to-gro-coral text-white p-3 sm:p-4 flex justify-between items-center">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-playful flex items-center justify-center shadow-card">
+                <span className="text-gro-teal font-bold text-sm sm:text-lg">G</span>
               </div>
               <div>
-                <h3 className="font-semibold text-lg">GRO Careers</h3>
-                <p className="text-xs text-white/80">AI Assistant • Ask me anything!</p>
+                <h3 className="font-semibold text-base sm:text-lg">GRO Careers</h3>
+                <p className="text-xs text-white/80 hidden sm:block">AI Assistant • Ask me anything!</p>
+                <p className="text-xs text-white/80 sm:hidden">AI Assistant</p>
               </div>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               <button
                 onClick={clearChat}
                 className="text-white hover:text-gray-200 transition-colors p-1 rounded"
                 aria-label="Clear chat"
                 title="Clear conversation"
               >
-                <RefreshCw size={18} />
+                <RefreshCw size={16} className="sm:w-[18px] sm:h-[18px]" />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-white hover:text-gray-200 transition-colors p-1 rounded"
                 aria-label="Close chat"
               >
-                <X size={20} />
+                <X size={18} className="sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>

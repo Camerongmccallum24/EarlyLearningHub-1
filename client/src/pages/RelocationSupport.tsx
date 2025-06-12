@@ -101,20 +101,20 @@ export default function RelocationSupport() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8 sm:py-12">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gro-blue-green mb-4">Relocation Support Center</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gro-blue-green mb-4">Relocation Support Center</h1>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Planning your move to join GRO Early Learning? Use our comprehensive relocation tools to 
             estimate costs, explore housing options, and discover your new community.
           </p>
         </div>
 
         {/* Benefits Banner */}
-        <div className="bg-gro-teal text-white p-6 rounded-2xl mb-12 text-center">
-          <h2 className="text-2xl font-bold mb-2">GRO Relocation Benefits</h2>
-          <div className="grid md:grid-cols-3 gap-6 mt-4">
+        <div className="bg-gro-teal text-white p-4 sm:p-6 rounded-2xl mb-8 sm:mb-12 text-center">
+          <h2 className="text-xl sm:text-2xl font-bold mb-2">GRO Relocation Benefits</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-4">
             <div>
               <div className="text-3xl font-bold">AU$5,000</div>
               <div className="text-sm opacity-90">Relocation Assistance</div>

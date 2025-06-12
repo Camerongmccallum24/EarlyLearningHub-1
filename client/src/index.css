@@ -129,6 +129,30 @@
   @apply transition-all duration-200 active:scale-[0.98] active:shadow-sm;
 }
 
+/* Enhanced mobile interactions */
+@media (max-width: 768px) {
+  .touch-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+  
+  .hover-scale:active {
+    transform: scale(0.95);
+  }
+  
+  /* Larger touch targets for mobile */
+  button, a[role="button"], .button {
+    min-height: 44px;
+    padding: 12px 16px;
+  }
+  
+  /* Better spacing for mobile forms */
+  input, textarea, select {
+    min-height: 44px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
 /* Mobile navigation improvements */
 .mobile-nav {
   @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50;

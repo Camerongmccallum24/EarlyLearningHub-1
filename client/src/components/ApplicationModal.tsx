@@ -99,12 +99,12 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle, jobLocatio
 
   return (
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto mobile-padding">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-primary">
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-primary">
             Apply for Position
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-sm sm:text-base">
             {jobTitle && jobLocation 
               ? `Submit your application for ${jobTitle} in ${jobLocation}. Complete the form below and we'll review your application within 5 business days.`
               : "Submit your application for this position. Complete the form below and we'll review your application within 5 business days."
@@ -113,8 +113,8 @@ export default function ApplicationModal({ isOpen, onClose, jobTitle, jobLocatio
         </DialogHeader>
         
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <FormField
                 control={form.control}
                 name="firstName"

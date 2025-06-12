@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileBottomNav from "@/components/MobileBottomNav";
 import GroChatbot from "@/components/GroChatbot";
 import Home from "@/pages/Home";
 import Jobs from "@/pages/Jobs";
@@ -38,10 +39,11 @@ function App() {
       <TooltipProvider>
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 pb-16 md:pb-0">
             <Router />
           </main>
           <Footer />
+          <MobileBottomNav />
         </div>
         <GroChatbot />
         <Toaster />

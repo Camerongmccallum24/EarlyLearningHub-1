@@ -7,7 +7,7 @@ export default function About() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-4">About Regional Childcare</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gro-blue-green mb-4">About Regional Childcare</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Dedicated to nurturing young minds with love, creativity, and individualized care, offering flexible and 
             customized learning journeys in the towns within a nurturing environment.
@@ -26,7 +26,7 @@ export default function About() {
         {/* Philosophy */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
-            <h2 className="text-3xl font-bold text-primary mb-6">Our Philosophy</h2>
+            <h2 className="text-3xl font-bold text-gro-coral mb-6">Our Philosophy</h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               At Regional Childcare, we believe each child is unique and capable. We focus on creating engaging 
               environments that foster play-based learning, allowing children to explore their curiosities through 

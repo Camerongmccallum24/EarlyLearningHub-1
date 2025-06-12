@@ -26,7 +26,7 @@ export default function Benefits() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-primary mb-4">Benefits & Perks</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gro-blue-green mb-4">Benefits & Perks</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Beyond competitive compensation, we offer comprehensive support including relocation assistance, 
             training, benefits and exceptional childcare facilities for the professional development and career growth.
@@ -35,7 +35,7 @@ export default function Benefits() {
 
         {/* Comprehensive Benefits Package */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">Comprehensive Benefits Package</h2>
+          <h2 className="text-3xl font-bold text-gro-coral text-center mb-12">Comprehensive Benefits Package</h2>
           <div className="grid lg:grid-cols-4 gap-8">
             {Object.entries(benefitsData).map(([category, data]) => (
               <div key={category} className="text-center">
